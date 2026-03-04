@@ -38,7 +38,7 @@ a{color:inherit;text-decoration:none}
 .page-nav-btn{background:var(--white);border:1px solid var(--gray-200);padding:10px 16px;border-radius:var(--radius);font:500 14px 'Inter',sans-serif;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:var(--shadow-md);transition:all .2s}
 .page-nav-btn:hover{border-color:var(--green);color:var(--green)}
 .page-nav-menu{display:none;position:absolute;right:0;top:calc(100% + 8px);background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);box-shadow:var(--shadow-lg);min-width:220px;overflow:hidden}
-.page-nav:hover .page-nav-menu{display:block}
+.page-nav-menu.open{display:block}
 .page-nav-menu a{display:block;padding:10px 16px;font-size:14px;transition:background .15s}
 .page-nav-menu a:hover{background:var(--gray-50)}
 .page-nav-menu a.active{color:var(--green);font-weight:600;background:rgba(0,134,0,.05)}
@@ -217,7 +217,7 @@ a{color:inherit;text-decoration:none}
 <body>
 <!-- Page Nav -->
 <div class="page-nav">
-  <button class="page-nav-btn"><i data-lucide="layout-grid" style="width:16px;height:16px"></i> Pages</button>
+  <button class="page-nav-btn" onclick="this.nextElementSibling.classList.toggle('open')"><i data-lucide="layout-grid" style="width:16px;height:16px"></i> Pages</button>
   <div class="page-nav-menu">
     <a href="v1.html">V1 — Classic Green</a>
     <a href="v2.html">V2 — Hero Banner</a>
@@ -448,6 +448,11 @@ a{color:inherit;text-decoration:none}
     <div class="footer-bottom"><span>© 2026 UCC VIP. All rights reserved.</span><span>contact@uccvip.com · +86 400-888-0000</span></div>
   </div>
 </footer>
-<script>lucide.createIcons();</script>
+<script>
+lucide.createIcons();
+document.addEventListener('click',function(e){
+  if(!e.target.closest('.page-nav')){document.querySelectorAll('.page-nav-menu').forEach(m=>m.classList.remove('open'))}
+});
+</script>
 </body>
 </html>
