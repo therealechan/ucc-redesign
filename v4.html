@@ -81,6 +81,14 @@ a{color:inherit;text-decoration:none}
 .search-floating .search-btn{grid-column:span 1;background:var(--green);color:#fff;border:none;border-radius:var(--radius);font:600 15px 'Inter',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s}
 .search-floating .search-btn:hover{background:var(--green-dark);transform:translateY(-1px)}
 
+/* Stats Section */
+.stats-section{padding:120px 0 100px;background:var(--bg);border-bottom:1px solid var(--gray-100)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:48px;max-width:1000px;margin:0 auto}
+.stat-item{text-align:center;padding:32px 24px;background:var(--surface);border:1px solid var(--gray-200);border-radius:var(--radius-lg);transition:all .3s}
+.stat-item:hover{border-color:var(--green);box-shadow:var(--shadow-soft);transform:translateY(-4px)}
+.stat-number{font-size:48px;font-weight:800;color:var(--green);line-height:1;margin-bottom:12px}
+.stat-label{font-size:13px;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.08em}
+
 /* Services V4: Bento Grid */
 .services-v4{padding:160px 0 80px;background:var(--bg)}
 .services-bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:180px;gap:20px}
@@ -210,6 +218,7 @@ a{color:inherit;text-decoration:none}
 /* Responsive */
 @media(max-width:1024px){
 .hero-stats-floating{position:static;transform:none;flex-direction:row;justify-content:center;margin-top:32px;flex-wrap:wrap}
+.stats-grid{grid-template-columns:repeat(2,1fr);gap:24px}
 .search-floating{position:relative;bottom:0;transform:none;margin-top:40px}
 .search-floating .sf-grid{grid-template-columns:repeat(2,1fr)}
 .services-bento{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}
@@ -225,6 +234,7 @@ a{color:inherit;text-decoration:none}
 }
 @media(max-width:768px){
 .nav-links{display:none}
+.stats-grid{grid-template-columns:1fr;gap:16px}
 .hero-v4::before{clip-path:polygon(0 0,100% 0,100% 40%,0 60%)}
 .search-floating .sf-grid{grid-template-columns:1fr}
 .services-bento{grid-template-columns:1fr;grid-auto-rows:auto}
@@ -275,7 +285,6 @@ a{color:inherit;text-decoration:none}
 <section class="hero-v4">
   <div class="container">
     <div class="hero-content">
-      <div class="hero-badge"><span class="dot"></span> Trusted by 500+ dealers</div>
       <h1>Source <em>Quality Cars</em> from China</h1>
       <p class="hero-desc">Certified pre-owned vehicles sourced from China's largest dealers. Complete export handling — documentation, inspection, logistics.</p>
       <div class="hero-actions">
@@ -284,18 +293,36 @@ a{color:inherit;text-decoration:none}
       </div>
     </div>
   </div>
-  <div class="hero-stats-floating">
-    <div class="stat-pill"><span class="num">12K+</span><span class="lbl">Vehicles</span></div>
-    <div class="stat-pill"><span class="num">60+</span><span class="lbl">Countries</span></div>
-    <div class="stat-pill"><span class="num">200+</span><span class="lbl">Brands</span></div>
-    <div class="stat-pill"><span class="num">500+</span><span class="lbl">Dealers</span></div>
-  </div>
   <div class="search-floating">
     <div class="sf-grid">
       <div class="sf"><label>Brand</label><select><option>Any Brand</option><option>Toyota</option><option>BMW</option><option>Mercedes</option><option>BYD</option><option>NIO</option></select></div>
       <div class="sf"><label>Type</label><select><option>Any Type</option><option>Sedan</option><option>SUV</option><option>Truck</option><option>EV</option></select></div>
       <div class="sf"><label>Budget</label><select><option>Any Budget</option><option>Under $10K</option><option>$10K–$25K</option><option>$25K–$50K</option><option>$50K+</option></select></div>
       <button class="search-btn"><i data-lucide="search" style="width:18px;height:18px"></i> Search</button>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">12K+</div>
+        <div class="stat-label">Vehicles</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">60+</div>
+        <div class="stat-label">Countries</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">200+</div>
+        <div class="stat-label">Brands</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Dealers</div>
+      </div>
     </div>
   </div>
 </section>
