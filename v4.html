@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UCC VIP - V4 Modern Bento Layout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--green:#008600;--green-dark:#006B00;--green-light:#00A300;--green-50:#ECFDF5;--green-100:#D1FAE5;
+--bg:#FFFFFF;--surface:#F9FAFB;--gray-50:#F9FAFB;--gray-100:#F3F4F6;--gray-200:#E5E7EB;--gray-300:#D1D5DB;
+--gray-400:#9CA3AF;--gray-500:#6B7280;--gray-600:#4B5563;--gray-700:#374151;--gray-800:#1F2937;--gray-900:#111827;
+--radius:16px;--radius-lg:24px;--radius-xl:32px;
+--shadow-soft:0 4px 20px rgba(0,0,0,.06);--shadow-float:0 8px 30px rgba(0,0,0,.08);
+--shadow-sm:0 1px 2px rgba(0,0,0,.05);--shadow:0 1px 3px rgba(0,0,0,.1);--shadow-md:0 4px 6px -1px rgba(0,0,0,.1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--gray-800);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border-radius:var(--radius);font:600 14px/1 'Inter',sans-serif;border:none;cursor:pointer;transition:all .2s}
+.btn-primary{background:var(--green);color:#fff}.btn-primary:hover{background:var(--green-dark);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.btn-outline{background:transparent;border:1.5px solid var(--gray-300);color:var(--gray-700)}.btn-outline:hover{border-color:var(--green);color:var(--green)}
+.btn-white{background:#fff;color:var(--green)}.btn-white:hover{background:var(--gray-50);transform:translateY(-1px)}
+.btn-lg{padding:16px 32px;font-size:16px;border-radius:var(--radius-lg)}
+.section-header{text-align:center;margin-bottom:56px}
+.section-label{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+.section-title{font-size:clamp(28px,3.5vw,40px);font-weight:800;color:var(--gray-900);letter-spacing:-.02em}
+.section-subtitle{font-size:16px;color:var(--gray-500);max-width:560px;margin:12px auto 0;line-height:1.7}
+
+/* Page Nav */
+.page-nav{position:fixed;top:20px;right:20px;z-index:1000}
+.page-nav-btn{background:var(--bg);border:1px solid var(--gray-200);padding:10px 16px;border-radius:var(--radius);font:500 14px 'Inter',sans-serif;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:var(--shadow-md);transition:all .2s}
+.page-nav-btn:hover{border-color:var(--green);color:var(--green)}
+.page-nav-menu{display:none;position:absolute;right:0;top:calc(100% + 8px);background:var(--bg);border:1px solid var(--gray-200);border-radius:var(--radius);box-shadow:var(--shadow-float);min-width:220px;overflow:hidden}
+.page-nav-menu.open{display:block}
+.page-nav-menu a{display:block;padding:10px 16px;font-size:14px;transition:background .15s}
+.page-nav-menu a:hover{background:var(--gray-50)}
+.page-nav-menu a.active{color:var(--green);font-weight:600;background:var(--green-50)}
+
+/* Navbar */
+.navbar{background:var(--bg);border-bottom:1px solid var(--gray-100);position:sticky;top:0;z-index:100;backdrop-filter:blur(10px);background:rgba(255,255,255,.95)}
+.navbar .container{display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo img{height:32px}
+.nav-logo-text{font-weight:700;font-size:18px;color:var(--green)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:14px;font-weight:500;color:var(--gray-600);transition:color .2s;display:flex;align-items:center;gap:6px}
+.nav-links a:hover{color:var(--green)}
+.nav-cta{display:flex;gap:12px;align-items:center}
+
+/* V4 Hero: Diagonal split with floating search */
+.hero-v4{position:relative;min-height:calc(100vh - 64px);background:linear-gradient(135deg,var(--green-50) 0%,#fff 60%);padding-bottom:80px}
+.hero-v4::before{content:'';position:absolute;top:0;left:0;right:40%;bottom:0;background:linear-gradient(135deg,var(--green-100) 0%,var(--green-50) 100%);clip-path:polygon(0 0,100% 0,60% 100%,0 100%);z-index:0}
+.hero-v4 .container{position:relative;z-index:1;padding-top:80px;padding-bottom:80px}
+.hero-content{max-width:600px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--green-100);padding:8px 16px;border-radius:100px;font-size:13px;font-weight:500;color:var(--green);margin-bottom:28px;box-shadow:var(--shadow-soft)}
+.hero-badge .dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-v4 h1{font-size:clamp(36px,5vw,64px);font-weight:900;line-height:1.08;margin-bottom:20px;letter-spacing:-.03em;color:var(--gray-900)}
+.hero-v4 h1 em{font-style:normal;color:var(--green)}
+.hero-v4 .hero-desc{font-size:18px;color:var(--gray-600);line-height:1.7;margin-bottom:32px}
+.hero-v4 .hero-actions{display:flex;gap:12px;margin-bottom:48px;flex-wrap:wrap}
+
+/* Floating stats badges */
+.hero-stats-floating{position:absolute;right:10%;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:16px;z-index:2}
+.stat-pill{background:var(--bg);border:1px solid var(--gray-200);border-radius:100px;padding:12px 20px;box-shadow:var(--shadow-float);backdrop-filter:blur(10px);min-width:140px;text-align:center}
+.stat-pill .num{font-size:24px;font-weight:800;color:var(--green);display:block}
+.stat-pill .lbl{font-size:11px;color:var(--gray-500);text-transform:uppercase;letter-spacing:.06em;display:block}
+
+/* Floating search card */
+.search-floating{position:absolute;bottom:-80px;left:50%;transform:translateX(-50%);width:90%;max-width:1100px;background:var(--bg);border:1px solid var(--gray-200);border-radius:var(--radius-xl);padding:24px;box-shadow:var(--shadow-float);backdrop-filter:blur(20px);z-index:10}
+.search-floating .sf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.search-floating .sf{display:flex;flex-direction:column;gap:6px}
+.search-floating .sf label{font-size:11px;font-weight:600;color:var(--gray-400);text-transform:uppercase;letter-spacing:.05em}
+.search-floating .sf select{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius);padding:10px 12px;color:var(--gray-800);font:600 14px 'Inter',sans-serif;appearance:none;cursor:pointer;outline:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%239CA3AF'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}
+.search-floating .search-btn{grid-column:span 1;background:var(--green);color:#fff;border:none;border-radius:var(--radius);font:600 15px 'Inter',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s}
+.search-floating .search-btn:hover{background:var(--green-dark);transform:translateY(-1px)}
+
+/* Services V4: Bento Grid */
+.services-v4{padding:160px 0 80px;background:var(--bg)}
+.services-bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:180px;gap:20px}
+.svc-card-v4{background:var(--surface);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px;transition:all .3s;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.svc-card-v4::before{content:'';position:absolute;top:0;right:0;width:100px;height:100px;background:var(--green-50);border-radius:50%;transform:translate(40%,-40%);opacity:0;transition:opacity .3s}
+.svc-card-v4:hover::before{opacity:1}
+.svc-card-v4:hover{border-color:var(--green);box-shadow:var(--shadow-float);transform:translateY(-4px)}
+.svc-card-v4:nth-child(1){grid-column:span 2;grid-row:span 2}
+.svc-card-v4:nth-child(2){grid-column:span 2;grid-row:span 1}
+.svc-card-v4:nth-child(3){grid-column:span 2;grid-row:span 1}
+.svc-card-v4:nth-child(4){grid-column:span 3;grid-row:span 1}
+.svc-card-v4:nth-child(5){grid-column:span 3;grid-row:span 1}
+.svc-icon-v4{width:48px;height:48px;background:var(--green-50);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:var(--green);margin-bottom:16px;transition:all .3s}
+.svc-card-v4:hover .svc-icon-v4{background:var(--green);color:#fff;transform:scale(1.1)}
+.svc-card-v4 h3{font-size:17px;font-weight:700;margin-bottom:8px;position:relative;z-index:1}
+.svc-card-v4 p{font-size:14px;color:var(--gray-500);line-height:1.6;position:relative;z-index:1}
+
+/* Vehicles V4: Horizontal Scroll Carousel */
+.vehicles-v4{padding:80px 0;background:var(--gray-50)}
+.vehicles-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px}
+.vehicles-top .section-header{text-align:left;margin-bottom:0}
+.vehicles-carousel{position:relative;margin:0 -24px;padding:0 24px}
+.carousel-track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none}
+.carousel-track::-webkit-scrollbar{display:none}
+.v-card-v4{flex:0 0 360px;scroll-snap-align:start;background:var(--bg);border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--gray-200);transition:all .3s}
+.v-card-v4:hover{transform:translateY(-4px);box-shadow:var(--shadow-float)}
+.v-img{aspect-ratio:16/10;overflow:hidden;position:relative}
+.v-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.v-card-v4:hover .v-img img{transform:scale(1.05)}
+.v-img .tag{position:absolute;top:12px;left:12px;background:var(--green);color:#fff;font-size:11px;font-weight:600;padding:6px 12px;border-radius:100px;display:flex;align-items:center;gap:4px;backdrop-filter:blur(10px)}
+.v-body{padding:20px}
+.v-body h3{font-size:16px;font-weight:700;margin-bottom:4px}
+.v-loc{font-size:13px;color:var(--gray-400);margin-bottom:12px;display:flex;align-items:center;gap:4px}
+.v-specs{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+.v-specs span{font-size:12px;color:var(--gray-500);display:flex;align-items:center;gap:4px}
+.v-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--gray-100);padding-top:16px}
+.v-price{font-size:20px;font-weight:800;color:var(--green)}
+.v-price small{font-size:12px;font-weight:400;color:var(--gray-400)}
+.carousel-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;background:var(--bg);border:1px solid var(--gray-200);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:all .2s;box-shadow:var(--shadow-soft)}
+.carousel-nav:hover{background:var(--green);color:#fff;border-color:var(--green)}
+.carousel-nav.prev{left:0}
+.carousel-nav.next{right:0}
+
+/* Steps V4: Vertical Zigzag Timeline */
+.steps-v4{padding:80px 0;background:var(--bg)}
+.steps-zigzag{max-width:800px;margin:0 auto;position:relative}
+.steps-zigzag::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--gray-200);transform:translateX(-50%)}
+.step-v4{display:flex;align-items:center;gap:24px;margin-bottom:48px;position:relative}
+.step-v4:nth-child(odd){flex-direction:row;text-align:right}
+.step-v4:nth-child(odd) .step-content{margin-right:auto;margin-left:0;max-width:45%}
+.step-v4:nth-child(even){flex-direction:row-reverse;text-align:left}
+.step-v4:nth-child(even) .step-content{margin-left:auto;margin-right:0;max-width:45%}
+.step-dot-v4{width:56px;height:56px;background:var(--bg);border:3px solid var(--green);color:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;flex-shrink:0;position:relative;z-index:2;box-shadow:var(--shadow-soft)}
+.step-v4:first-child .step-dot-v4{background:var(--green);color:#fff}
+.step-content{background:var(--surface);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:20px 24px;box-shadow:var(--shadow-soft)}
+.step-content h4{font-size:16px;font-weight:700;margin-bottom:6px}
+.step-content p{font-size:13px;color:var(--gray-500);line-height:1.5}
+
+/* Why V4: Staggered Cards */
+.why-v4{padding:80px 0;background:var(--gray-50)}
+.why-staggered{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:48px}
+.why-card-v4{background:var(--bg);border:1px solid var(--gray-200);border-radius:var(--radius-xl);padding:32px;transition:all .3s}
+.why-card-v4:nth-child(odd){transform:translateY(40px)}
+.why-card-v4:hover{border-color:var(--green);box-shadow:var(--shadow-float);transform:translateY(0)}
+.why-icon-v4{width:56px;height:56px;background:var(--green-50);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;color:var(--green);margin-bottom:20px;transition:all .3s}
+.why-card-v4:hover .why-icon-v4{background:var(--green);color:#fff;transform:scale(1.1)}
+.why-card-v4 h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.why-card-v4 p{font-size:14px;color:var(--gray-500);line-height:1.7}
+
+/* Testimonials V4: Carousel Slider */
+.testimonials-v4{padding:80px 0;background:var(--bg)}
+.testimonials-slider{position:relative;max-width:900px;margin:0 auto}
+.slider-track{position:relative;min-height:300px}
+.test-slide{position:absolute;top:0;left:0;width:100%;opacity:0;transition:opacity .5s;pointer-events:none}
+.test-slide.active{opacity:1;pointer-events:auto}
+.test-card-v4{background:var(--surface);border:1px solid var(--gray-200);border-radius:var(--radius-xl);padding:48px;text-align:center}
+.test-card-v4 .qt{font-size:64px;line-height:1;color:var(--green);opacity:.2;margin-bottom:16px;font-weight:800}
+.test-card-v4 .text{font-size:20px;line-height:1.7;color:var(--gray-700);margin-bottom:32px;font-weight:400}
+.test-card-v4 .author{display:flex;align-items:center;justify-content:center;gap:16px}
+.test-card-v4 .avatar{width:56px;height:56px;background:var(--green-50);color:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px}
+.test-card-v4 .name{font-weight:700;font-size:16px;text-align:left}
+.test-card-v4 .role{font-size:14px;color:var(--gray-500);text-align:left}
+.slider-dots{display:flex;justify-content:center;gap:8px;margin-top:32px}
+.slider-dot{width:10px;height:10px;background:var(--gray-300);border-radius:50%;cursor:pointer;transition:all .3s}
+.slider-dot.active{background:var(--green);width:32px;border-radius:5px}
+
+/* Blog V4: Asymmetric Layout */
+.blog-v4{padding:80px 0;background:var(--gray-50)}
+.blog-asymmetric{display:grid;grid-template-columns:2fr 1fr;gap:24px}
+.blog-featured{grid-row:span 2;background:var(--bg);border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--gray-200);transition:all .3s}
+.blog-featured:hover{transform:translateY(-4px);box-shadow:var(--shadow-float)}
+.blog-featured .blog-img{aspect-ratio:16/11}
+.blog-featured .blog-body{padding:32px}
+.blog-featured h3{font-size:24px;font-weight:800;margin:12px 0 16px;line-height:1.3}
+.blog-featured p{font-size:16px;color:var(--gray-600);line-height:1.7}
+.blog-small{background:var(--bg);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-200);transition:all .3s;display:flex;flex-direction:column}
+.blog-small:hover{transform:translateY(-4px);box-shadow:var(--shadow-float)}
+.blog-small .blog-img{aspect-ratio:16/9}
+.blog-small .blog-body{padding:20px;flex:1}
+.blog-small h3{font-size:15px;font-weight:700;margin:8px 0;line-height:1.4}
+.blog-small p{font-size:13px;color:var(--gray-500);line-height:1.6}
+.blog-img{overflow:hidden}
+.blog-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.blog-featured:hover .blog-img img,.blog-small:hover .blog-img img{transform:scale(1.05)}
+.blog-tag{font-size:11px;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:.05em}
+.blog-date{font-size:12px;color:var(--gray-400);margin-top:12px;display:flex;align-items:center;gap:4px}
+
+/* CTA V4 */
+.cta-v4{padding:80px 0;background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);position:relative;overflow:hidden}
+.cta-v4::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:rgba(255,255,255,.08);border-radius:50%}
+.cta-v4::after{content:'';position:absolute;bottom:-80px;left:-80px;width:300px;height:300px;background:rgba(0,0,0,.08);border-radius:50%}
+.cta-v4 .container{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:40px}
+.cta-v4 .cta-text{max-width:560px;color:#fff}
+.cta-v4 h3{font-size:36px;font-weight:800;margin-bottom:12px}
+.cta-v4 p{font-size:17px;opacity:.9;line-height:1.7}
+.cta-v4 .cta-btns{display:flex;gap:12px}
+
+/* Footer */
+.footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:64px 0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand p{font-size:14px;line-height:1.7;margin-top:16px;max-width:280px}
+.footer-col h4{font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+.footer-col a{display:block;font-size:14px;padding:4px 0;transition:color .2s}
+.footer-col a:hover{color:var(--green-light)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;font-size:13px}
+
+/* Responsive */
+@media(max-width:1024px){
+.hero-stats-floating{position:static;transform:none;flex-direction:row;justify-content:center;margin-top:32px;flex-wrap:wrap}
+.search-floating{position:relative;bottom:0;transform:none;margin-top:40px}
+.search-floating .sf-grid{grid-template-columns:repeat(2,1fr)}
+.services-bento{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}
+.svc-card-v4:nth-child(1),.svc-card-v4:nth-child(2),.svc-card-v4:nth-child(3){grid-column:span 1;grid-row:span 1}
+.svc-card-v4:nth-child(4),.svc-card-v4:nth-child(5){grid-column:span 2}
+.why-staggered{grid-template-columns:1fr}
+.why-card-v4:nth-child(odd){transform:translateY(0)}
+.blog-asymmetric{grid-template-columns:1fr}
+.blog-featured{grid-row:span 1}
+.footer-grid{grid-template-columns:repeat(2,1fr)}
+.cta-v4 .container{flex-direction:column;text-align:center}
+.cta-v4 .cta-btns{justify-content:center}
+}
+@media(max-width:768px){
+.nav-links{display:none}
+.hero-v4::before{clip-path:polygon(0 0,100% 0,100% 40%,0 60%)}
+.search-floating .sf-grid{grid-template-columns:1fr}
+.services-bento{grid-template-columns:1fr;grid-auto-rows:auto}
+.svc-card-v4{grid-column:span 1!important;grid-row:span 1!important}
+.steps-zigzag::before{display:none}
+.step-v4{flex-direction:column!important;text-align:center!important}
+.step-v4 .step-content{max-width:100%!important;margin:0!important}
+.footer-grid{grid-template-columns:1fr}
+.footer-bottom{flex-direction:column;gap:8px;text-align:center}
+.page-nav{top:12px;right:12px}
+}
+</style>
+</head>
+<body>
+<!-- Page Nav -->
+<div class="page-nav">
+  <button class="page-nav-btn" onclick="this.nextElementSibling.classList.toggle('open')"><i data-lucide="layout-grid" style="width:16px;height:16px"></i> Pages</button>
+  <div class="page-nav-menu">
+    <a href="v1.html">V1 — Classic Green</a>
+    <a href="v2.html">V2 — Hero Banner</a>
+    <a href="v3.html">V3 — Bold Split</a>
+    <a href="v4.html" class="active">V4 — Modern Bento</a>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container">
+    <a href="#" class="nav-logo">
+      <img src="https://ucc-demo.beansmile.ai/ucc-vip-logo.svg" alt="UCC VIP" onerror="this.style.display='none'">
+      <span class="nav-logo-text">UCC VIP</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#vehicles"><i data-lucide="car" style="width:16px;height:16px"></i> Vehicles</a></li>
+      <li><a href="#services"><i data-lucide="shield-check" style="width:16px;height:16px"></i> Services</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#why">About</a></li>
+      <li><a href="#blog">News</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-outline">Sign In</a>
+      <a href="#" class="btn btn-primary">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- V4 Hero: Diagonal split with floating elements -->
+<section class="hero-v4">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="dot"></span> Trusted by 500+ dealers</div>
+      <h1>Source <em>Quality Cars</em> from China</h1>
+      <p class="hero-desc">Certified pre-owned vehicles sourced from China's largest dealers. Complete export handling — documentation, inspection, logistics.</p>
+      <div class="hero-actions">
+        <a href="#vehicles" class="btn btn-primary btn-lg"><i data-lucide="search" style="width:18px;height:18px"></i> Browse Vehicles</a>
+        <a href="#how" class="btn btn-outline btn-lg"><i data-lucide="play-circle" style="width:18px;height:18px"></i> How It Works</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-stats-floating">
+    <div class="stat-pill"><span class="num">12K+</span><span class="lbl">Vehicles</span></div>
+    <div class="stat-pill"><span class="num">60+</span><span class="lbl">Countries</span></div>
+    <div class="stat-pill"><span class="num">200+</span><span class="lbl">Brands</span></div>
+    <div class="stat-pill"><span class="num">500+</span><span class="lbl">Dealers</span></div>
+  </div>
+  <div class="search-floating">
+    <div class="sf-grid">
+      <div class="sf"><label>Brand</label><select><option>Any Brand</option><option>Toyota</option><option>BMW</option><option>Mercedes</option><option>BYD</option><option>NIO</option></select></div>
+      <div class="sf"><label>Type</label><select><option>Any Type</option><option>Sedan</option><option>SUV</option><option>Truck</option><option>EV</option></select></div>
+      <div class="sf"><label>Budget</label><select><option>Any Budget</option><option>Under $10K</option><option>$10K–$25K</option><option>$25K–$50K</option><option>$50K+</option></select></div>
+      <button class="search-btn"><i data-lucide="search" style="width:18px;height:18px"></i> Search</button>
+    </div>
+  </div>
+</section>
+
+<!-- Services: Bento Grid -->
+<section class="services-v4" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><i data-lucide="layers" style="width:14px;height:14px"></i> Our Services</div>
+      <h2 class="section-title">End-to-End Export Solutions</h2>
+      <p class="section-subtitle">From sourcing to delivery, we handle every step of the cross-border trading process.</p>
+    </div>
+    <div class="services-bento">
+      <div class="svc-card-v4">
+        <div><div class="svc-icon-v4"><i data-lucide="search" style="width:22px;height:22px"></i></div><h3>Vehicle Sourcing</h3></div>
+        <p>Access China's largest network of certified dealers with real-time inventory updates.</p>
+      </div>
+      <div class="svc-card-v4">
+        <div><div class="svc-icon-v4"><i data-lucide="clipboard-check" style="width:22px;height:22px"></i></div><h3>Inspection & Certification</h3></div>
+        <p>200-point inspection with certified export documentation for every vehicle.</p>
+      </div>
+      <div class="svc-card-v4">
+        <div><div class="svc-icon-v4"><i data-lucide="file-text" style="width:22px;height:22px"></i></div><h3>Export Documentation</h3></div>
+        <p>Complete customs clearance, title transfer, and regulatory compliance handled.</p>
+      </div>
+      <div class="svc-card-v4">
+        <div><div class="svc-icon-v4"><i data-lucide="ship" style="width:22px;height:22px"></i></div><h3>International Logistics</h3></div>
+        <p>Door-to-port and door-to-door shipping to 60+ countries worldwide.</p>
+      </div>
+      <div class="svc-card-v4">
+        <div><div class="svc-icon-v4"><i data-lucide="headphones" style="width:22px;height:22px"></i></div><h3>24/7 Support</h3></div>
+        <p>Dedicated account managers and multilingual support team available around the clock.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vehicles: Horizontal Scroll Carousel -->
+<section class="vehicles-v4" id="vehicles">
+  <div class="container">
+    <div class="vehicles-top">
+      <div class="section-header">
+        <div class="section-label"><i data-lucide="star" style="width:14px;height:14px"></i> Featured</div>
+        <h2 class="section-title">Handpicked for Export</h2>
+      </div>
+      <a href="#" class="btn btn-outline">View All <i data-lucide="arrow-right" style="width:16px;height:16px"></i></a>
+    </div>
+  </div>
+  <div class="vehicles-carousel">
+    <button class="carousel-nav prev" onclick="scrollCarousel(-1)"><i data-lucide="chevron-left" style="width:20px;height:20px"></i></button>
+    <div class="carousel-track" id="carouselTrack">
+      <div class="v-card-v4">
+        <div class="v-img"><img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=600&h=375&fit=crop" alt="Toyota"><span class="tag"><i data-lucide="badge-check" style="width:12px;height:12px"></i> Certified</span></div>
+        <div class="v-body"><h3>2024 Toyota Camry Hybrid</h3><div class="v-loc"><i data-lucide="map-pin" style="width:13px;height:13px"></i> Shanghai</div><div class="v-specs"><span><i data-lucide="zap" style="width:12px;height:12px"></i> Hybrid</span><span><i data-lucide="gauge" style="width:12px;height:12px"></i> 12K km</span><span><i data-lucide="settings-2" style="width:12px;height:12px"></i> Auto</span></div><div class="v-foot"><div class="v-price">$18,500 <small>FOB</small></div><a href="#" class="btn btn-outline" style="padding:8px 16px;font-size:13px">Inquire</a></div></div>
+      </div>
+      <div class="v-card-v4">
+        <div class="v-img"><img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&h=375&fit=crop" alt="BMW"><span class="tag"><i data-lucide="crown" style="width:12px;height:12px"></i> Premium</span></div>
+        <div class="v-body"><h3>2023 BMW 325Li Long</h3><div class="v-loc"><i data-lucide="map-pin" style="width:13px;height:13px"></i> Beijing</div><div class="v-specs"><span><i data-lucide="fuel" style="width:12px;height:12px"></i> Petrol</span><span><i data-lucide="gauge" style="width:12px;height:12px"></i> 28K km</span><span><i data-lucide="settings-2" style="width:12px;height:12px"></i> Auto</span></div><div class="v-foot"><div class="v-price">$29,800 <small>FOB</small></div><a href="#" class="btn btn-outline" style="padding:8px 16px;font-size:13px">Inquire</a></div></div>
+      </div>
+      <div class="v-card-v4">
+        <div class="v-img"><img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=600&h=375&fit=crop" alt="BYD"><span class="tag"><i data-lucide="battery-charging" style="width:12px;height:12px"></i> EV</span></div>
+        <div class="v-body"><h3>2024 BYD Han EV Champion</h3><div class="v-loc"><i data-lucide="map-pin" style="width:13px;height:13px"></i> Shenzhen</div><div class="v-specs"><span><i data-lucide="zap" style="width:12px;height:12px"></i> Electric</span><span><i data-lucide="gauge" style="width:12px;height:12px"></i> 5K km</span><span><i data-lucide="settings-2" style="width:12px;height:12px"></i> Auto</span></div><div class="v-foot"><div class="v-price">$24,200 <small>FOB</small></div><a href="#" class="btn btn-outline" style="padding:8px 16px;font-size:13px">Inquire</a></div></div>
+      </div>
+      <div class="v-card-v4">
+        <div class="v-img"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&h=375&fit=crop" alt="Mercedes"><span class="tag"><i data-lucide="crown" style="width:12px;height:12px"></i> Premium</span></div>
+        <div class="v-body"><h3>2023 Mercedes E300L</h3><div class="v-loc"><i data-lucide="map-pin" style="width:13px;height:13px"></i> Guangzhou</div><div class="v-specs"><span><i data-lucide="fuel" style="width:12px;height:12px"></i> Petrol</span><span><i data-lucide="gauge" style="width:12px;height:12px"></i> 18K km</span><span><i data-lucide="settings-2" style="width:12px;height:12px"></i> Auto</span></div><div class="v-foot"><div class="v-price">$35,900 <small>FOB</small></div><a href="#" class="btn btn-outline" style="padding:8px 16px;font-size:13px">Inquire</a></div></div>
+      </div>
+    </div>
+    <button class="carousel-nav next" onclick="scrollCarousel(1)"><i data-lucide="chevron-right" style="width:20px;height:20px"></i></button>
+  </div>
+</section>
+
+<!-- Steps: Vertical Zigzag Timeline -->
+<section class="steps-v4" id="how">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><i data-lucide="route" style="width:14px;height:14px"></i> How It Works</div>
+      <h2 class="section-title">6 Steps to Your Vehicle</h2>
+    </div>
+    <div class="steps-zigzag">
+      <div class="step-v4">
+        <div class="step-dot-v4">1</div>
+        <div class="step-content"><h4>Search & Browse</h4><p>Explore our inventory or request specific vehicles from our dealer network.</p></div>
+      </div>
+      <div class="step-v4">
+        <div class="step-dot-v4">2</div>
+        <div class="step-content"><h4>Inquiry & Reports</h4><p>Receive detailed specs, inspection reports, and high-resolution photos.</p></div>
+      </div>
+      <div class="step-v4">
+        <div class="step-dot-v4">3</div>
+        <div class="step-content"><h4>Negotiate Price</h4><p>Work with our team to secure the best deal for your budget.</p></div>
+      </div>
+      <div class="step-v4">
+        <div class="step-dot-v4">4</div>
+        <div class="step-content"><h4>Secure Payment</h4><p>Complete payment through our secure escrow service for protection.</p></div>
+      </div>
+      <div class="step-v4">
+        <div class="step-dot-v4">5</div>
+        <div class="step-content"><h4>Shipping & Docs</h4><p>We handle all export documentation and international logistics.</p></div>
+      </div>
+      <div class="step-v4">
+        <div class="step-dot-v4">6</div>
+        <div class="step-content"><h4>Receive Vehicle</h4><p>Your vehicle arrives at your door or designated port, ready to go.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why: Staggered Cards -->
+<section class="why-v4" id="why">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><i data-lucide="trophy" style="width:14px;height:14px"></i> Why UCC VIP</div>
+      <h2 class="section-title">Built for Global Auto Trade</h2>
+      <p class="section-subtitle">Trusted by dealers and buyers worldwide for quality, transparency, and reliability.</p>
+    </div>
+    <div class="why-staggered">
+      <div class="why-card-v4">
+        <div class="why-icon-v4"><i data-lucide="globe" style="width:24px;height:24px"></i></div>
+        <h3>Wide Selection</h3>
+        <p>12,000+ vehicles from 200+ brands across China's top dealer networks.</p>
+      </div>
+      <div class="why-card-v4">
+        <div class="why-icon-v4"><i data-lucide="scroll-text" style="width:24px;height:24px"></i></div>
+        <h3>Certified Export</h3>
+        <p>Full export documentation, customs clearance, and regulatory compliance.</p>
+      </div>
+      <div class="why-card-v4">
+        <div class="why-icon-v4"><i data-lucide="microscope" style="width:24px;height:24px"></i></div>
+        <h3>Quality Inspection</h3>
+        <p>Every vehicle passes a 200-point certified inspection before listing.</p>
+      </div>
+      <div class="why-card-v4">
+        <div class="why-icon-v4"><i data-lucide="package" style="width:24px;height:24px"></i></div>
+        <h3>Bulk Sourcing</h3>
+        <p>Special pricing and dedicated account management for fleet buyers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials: Carousel Slider -->
+<section class="testimonials-v4">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><i data-lucide="message-circle" style="width:14px;height:14px"></i> Testimonials</div>
+      <h2 class="section-title">What Our Clients Say</h2>
+    </div>
+    <div class="testimonials-slider">
+      <div class="slider-track">
+        <div class="test-slide active">
+          <div class="test-card-v4">
+            <div class="qt">"</div>
+            <p class="text">UCC VIP made importing vehicles from China incredibly smooth. The inspection reports gave us full confidence, and the logistics were handled flawlessly. We've now sourced over 50 vehicles through them.</p>
+            <div class="author"><div class="avatar">AK</div><div><div class="name">Ahmed Khalil</div><div class="role">Auto Dealer, Dubai UAE</div></div></div>
+          </div>
+        </div>
+        <div class="test-slide">
+          <div class="test-card-v4">
+            <div class="qt">"</div>
+            <p class="text">We've sourced over 200 vehicles through UCC VIP. Their bulk pricing and dedicated support team have been game-changers for our business. Highly recommend for fleet buyers.</p>
+            <div class="author"><div class="avatar">MO</div><div><div class="name">Maria Oliveira</div><div class="role">Fleet Manager, São Paulo</div></div></div>
+          </div>
+        </div>
+        <div class="test-slide">
+          <div class="test-card-v4">
+            <div class="qt">"</div>
+            <p class="text">The transparency in pricing and the quality of documentation exceeded our expectations. Every vehicle arrived exactly as described. Professional service from start to finish.</p>
+            <div class="author"><div class="avatar">JN</div><div><div class="name">James Njoroge</div><div class="role">Import Agent, Nairobi</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-dots">
+        <span class="slider-dot active" onclick="goToSlide(0)"></span>
+        <span class="slider-dot" onclick="goToSlide(1)"></span>
+        <span class="slider-dot" onclick="goToSlide(2)"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog: Asymmetric Layout -->
+<section class="blog-v4" id="blog">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label"><i data-lucide="newspaper" style="width:14px;height:14px"></i> Latest News</div>
+      <h2 class="section-title">Industry Insights</h2>
+    </div>
+    <div class="blog-asymmetric">
+      <div class="blog-featured">
+        <div class="blog-img"><img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&h=550&fit=crop" alt="EV"></div>
+        <div class="blog-body">
+          <div class="blog-tag">Market Trends</div>
+          <h3>China's EV Exports Surge 80% in 2025</h3>
+          <p>New energy vehicles lead China's auto export boom, with major markets in Europe, Southeast Asia, and Latin America driving unprecedented growth in cross-border trade.</p>
+          <div class="blog-date"><i data-lucide="calendar" style="width:12px;height:12px"></i> March 1, 2026</div>
+        </div>
+      </div>
+      <div class="blog-small">
+        <div class="blog-img"><img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=600&h=338&fit=crop" alt="Ship"></div>
+        <div class="blog-body">
+          <div class="blog-tag">Logistics</div>
+          <h3>New Routes Cut Delivery Time by 30%</h3>
+          <p>Direct routes from Shanghai to Africa and South America.</p>
+          <div class="blog-date"><i data-lucide="calendar" style="width:12px;height:12px"></i> Feb 24, 2026</div>
+        </div>
+      </div>
+      <div class="blog-small">
+        <div class="blog-img"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&h=338&fit=crop" alt="Inspect"></div>
+        <div class="blog-body">
+          <div class="blog-tag">Quality</div>
+          <h3>Understanding Export Certification</h3>
+          <p>A guide to inspection and documentation for cross-border purchases.</p>
+          <div class="blog-date"><i data-lucide="calendar" style="width:12px;height:12px"></i> Feb 18, 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-v4">
+  <div class="container">
+    <div class="cta-text">
+      <h3>Ready to Source Your Next Vehicle?</h3>
+      <p>Join 500+ dealers worldwide who trust UCC VIP for cross-border auto sourcing. Browse inventory or list your vehicles today.</p>
+    </div>
+    <div class="cta-btns">
+      <a href="#" class="btn btn-white btn-lg"><i data-lucide="search" style="width:18px;height:18px"></i> Browse Vehicles</a>
+      <a href="#" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.3);color:#fff"><i data-lucide="upload" style="width:18px;height:18px"></i> List Vehicles</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><span style="color:var(--green-light);font-size:20px;font-weight:800">UCC VIP</span><p>China's leading cross-border auto trading platform. Connecting dealers and buyers worldwide since 2020.</p></div>
+      <div class="footer-col"><h4>Platform</h4><a href="#">Browse Vehicles</a><a href="#">How It Works</a><a href="#">Pricing</a><a href="#">For Dealers</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="#">About Us</a><a href="#">Blog</a><a href="#">Careers</a><a href="#">Contact</a></div>
+      <div class="footer-col"><h4>Support</h4><a href="#">Help Center</a><a href="#">Shipping Guide</a><a href="#">Terms of Service</a><a href="#">Privacy Policy</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 UCC VIP. All rights reserved.</span><span>contact@uccvip.com · +86 400-888-0000</span></div>
+  </div>
+</footer>
+
+<script>
+lucide.createIcons();
+
+// Page nav toggle
+document.addEventListener('click',function(e){
+  if(!e.target.closest('.page-nav')){document.querySelectorAll('.page-nav-menu').forEach(m=>m.classList.remove('open'))}
+});
+
+// Carousel scroll
+function scrollCarousel(direction){
+  const track=document.getElementById('carouselTrack');
+  const cardWidth=360+24;
+  track.scrollBy({left:direction*cardWidth,behavior:'smooth'});
+}
+
+// Testimonial slider
+let currentSlide=0;
+const slides=document.querySelectorAll('.test-slide');
+const dots=document.querySelectorAll('.slider-dot');
+
+function goToSlide(index){
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  currentSlide=index;
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+}
+
+// Auto-advance testimonials
+setInterval(()=>{
+  goToSlide((currentSlide+1)%slides.length);
+},6000);
+</script>
+</body>
+</html>
