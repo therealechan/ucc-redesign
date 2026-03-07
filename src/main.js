@@ -1,0 +1,25 @@
+import { createApp } from 'vue'
+import { createRouter, createWebHistory } from 'vue-router'
+import App from './App.vue'
+import Home from './views/Home.vue'
+import V1 from './views/V1.vue'
+import V2 from './views/V2.vue'
+import V3 from './views/V3.vue'
+import V4 from './views/V4.vue'
+
+const routes = [
+  { path: '/', component: Home },
+  { path: '/v1', component: V1 },
+  { path: '/v2', component: V2 },
+  { path: '/v3', component: V3 },
+  { path: '/v4', component: V4 }
+]
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes
+})
+
+const app = createApp(App)
+app.use(router)
+app.mount('#app')
