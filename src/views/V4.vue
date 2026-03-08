@@ -52,20 +52,23 @@
           <h2 class="section-title">Complete Export Solutions</h2>
         </div>
         <div class="services-bento">
-          <div class="svc-card-v4 large"><div class="svc-icon-v4"><Search :size="32" /></div><h3>Vehicle Sourcing</h3><p>Access 12,000+ certified vehicles</p></div>
-          <div class="svc-card-v4"><div class="svc-icon-v4"><ClipboardCheck :size="24" /></div><h3>Inspection</h3><p>200-point check</p></div>
-          <div class="svc-card-v4"><div class="svc-icon-v4"><FileText :size="24" /></div><h3>Documentation</h3><p>Full compliance</p></div>
-          <div class="svc-card-v4"><div class="svc-icon-v4"><Ship :size="24" /></div><h3>Shipping</h3><p>Global logistics</p></div>
-          <div class="svc-card-v4"><div class="svc-icon-v4"><ShieldCheck :size="24" /></div><h3>Support</h3><p>24/7 assistance</p></div>
+          <div class="svc-card-v4 large"><img class="svc-bg-img" src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&h=600&fit=crop&q=80" alt=""><div class="svc-icon-v4"><Search :size="32" /></div><h3>Vehicle Sourcing</h3><p>Access 12,000+ certified vehicles</p></div>
+          <div class="svc-card-v4"><img class="svc-bg-img" src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=600&h=400&fit=crop&q=80" alt=""><div class="svc-icon-v4"><ClipboardCheck :size="24" /></div><h3>Inspection</h3><p>200-point check</p></div>
+          <div class="svc-card-v4"><img class="svc-bg-img" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop&q=80" alt=""><div class="svc-icon-v4"><FileText :size="24" /></div><h3>Documentation</h3><p>Full compliance</p></div>
+          <div class="svc-card-v4"><img class="svc-bg-img" src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=600&h=400&fit=crop&q=80" alt=""><div class="svc-icon-v4"><Ship :size="24" /></div><h3>Shipping</h3><p>Global logistics</p></div>
+          <div class="svc-card-v4"><img class="svc-bg-img" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&h=400&fit=crop&q=80" alt=""><div class="svc-icon-v4"><ShieldCheck :size="24" /></div><h3>Support</h3><p>24/7 assistance</p></div>
         </div>
       </div>
     </section>
 
     <section class="vehicles-v4" id="vehicles">
       <div class="container">
-        <div class="section-header">
-          <div class="section-label"><Star :size="14" /> Featured</div>
-          <h2 class="section-title">Available Now</h2>
+        <div class="section-header vehicles-header-v4">
+          <div>
+            <div class="section-label"><Star :size="14" /> Featured</div>
+            <h2 class="section-title">Available Now</h2>
+          </div>
+          <a href="#" class="btn btn-outline view-all-btn">View All Vehicles <ArrowRight :size="15" /></a>
         </div>
         <div class="v-grid-v4">
           <div class="v-card-v4"><img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=600&h=375&fit=crop" alt="Toyota"><div class="v-body-v4"><span class="v-tag">Certified</span><h3>2024 Toyota Camry</h3><p>Shanghai · Hybrid · 12K km</p><div class="v-footer-v4"><span class="v-price-v4">$18,500</span><a href="#" class="btn btn-primary">Inquire</a></div></div></div>
@@ -144,16 +147,22 @@ import FooterSection from '../components/v1/FooterSection.vue'
 .section-label { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #008600; text-transform: uppercase; margin-bottom: 12px; }
 .section-title { font-size: clamp(28px, 3.5vw, 40px); font-weight: 800; color: #111827; }
 .services-bento { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.svc-card-v4 { background: #F9FAFB; border: 1px solid #F3F4F6; border-radius: 16px; padding: 28px; transition: all .3s; }
-.svc-card-v4:hover { border-color: #008600; box-shadow: 0 8px 30px rgba(0,0,0,.08); transform: translateY(-4px); }
+.svc-card-v4 { position: relative; overflow: hidden; background: #0f1923; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 28px; transition: all .3s; }
+.svc-card-v4:hover { border-color: #008600; box-shadow: 0 8px 30px rgba(0,0,0,.3); transform: translateY(-4px); }
 .svc-card-v4.large { grid-column: span 2; grid-row: span 2; }
-.svc-icon-v4 { width: 56px; height: 56px; background: #ECFDF5; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #008600; margin-bottom: 16px; }
+.svc-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.25; transition: opacity 0.3s; }
+.svc-card-v4:hover .svc-bg-img { opacity: 0.4; }
+.svc-card-v4 > *:not(.svc-bg-img) { position: relative; z-index: 1; }
+.svc-icon-v4 { width: 56px; height: 56px; background: rgba(0,134,0,0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #4ade80; margin-bottom: 16px; }
 .svc-card-v4:hover .svc-icon-v4 { background: #008600; color: #fff; }
-.svc-card-v4 h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
-.svc-card-v4 p { font-size: 14px; color: #6B7280; }
+.svc-card-v4 h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #fff; }
+.svc-card-v4 p { font-size: 14px; color: rgba(255,255,255,0.55); }
 
 .vehicles-v4 { padding: 80px 0; background: #F9FAFB; }
 .vehicles-v4 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.vehicles-header-v4 { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; text-align: left; }
+.view-all-btn { white-space: nowrap; background: transparent; border: 1.5px solid #008600; color: #008600; }
+.view-all-btn:hover { background: #008600; color: #fff; border-color: #008600; }
 .v-grid-v4 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .v-card-v4 { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid #F3F4F6; transition: all .3s; }
 .v-card-v4:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0,0,0,.1); }
