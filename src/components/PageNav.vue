@@ -51,7 +51,7 @@ onUnmounted(() => {
 <style scoped>
 .page-nav {
   position: fixed;
-  top: 20px;
+  bottom: 20px;
   right: 20px;
   z-index: 1000;
 }
@@ -79,7 +79,7 @@ onUnmounted(() => {
   display: none;
   position: absolute;
   right: 0;
-  top: calc(100% + 8px);
+  bottom: calc(100% + 8px);
   background: var(--white, #fff);
   border: 1px solid var(--gray-200, #E5E7EB);
   border-radius: 12px;
@@ -113,7 +113,7 @@ onUnmounted(() => {
 
 @media (max-width: 768px) {
   .page-nav {
-    top: 12px;
+    bottom: 12px;
     right: 12px;
   }
 }
