@@ -6,13 +6,15 @@ import V1 from './views/V1.vue'
 import V2 from './views/V2.vue'
 import V3 from './views/V3.vue'
 import V4 from './views/V4.vue'
+import V5 from './views/V5.vue'
 
 const routes = [
   { path: '/', component: Home },
   { path: '/v1', component: V1 },
   { path: '/v2', component: V2 },
   { path: '/v3', component: V3 },
-  { path: '/v4', component: V4 }
+  { path: '/v4', component: V4 },
+  { path: '/v5', component: V5 }
 ]
 
 const router = createRouter({

@@ -25,7 +25,8 @@ const pages = [
   { id: 'v1', path: '/v1', label: 'V1 — Classic Green' },
   { id: 'v2', path: '/v2', label: 'V2 — Hero Banner' },
   { id: 'v3', path: '/v3', label: 'V3 — Bold Split' },
-  { id: 'v4', path: '/v4', label: 'V4 — Modern Bento' }
+  { id: 'v4', path: '/v4', label: 'V4 — Modern Bento' },
+  { id: 'v5', path: '/v5', label: 'V5 — Dark Premium' }
 ]
 
 const toggleMenu = () => {

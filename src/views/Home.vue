@@ -22,7 +22,8 @@ const versions = [
   { path: '/v1', num: 'V1', name: 'Classic Green', desc: 'Traditional green theme with clean layout' },
   { path: '/v2', num: 'V2', name: 'Hero Banner', desc: 'Large hero banner with bold typography' },
   { path: '/v3', num: 'V3', name: 'Bold Split', desc: 'Split-screen design with strong contrasts' },
-  { path: '/v4', num: 'V4', name: 'Modern Bento', desc: 'Bento grid layout with modern aesthetics' }
+  { path: '/v4', num: 'V4', name: 'Modern Bento', desc: 'Bento grid layout with modern aesthetics' },
+  { path: '/v5', num: 'V5', name: 'Dark Premium', desc: 'Dark premium theme with glassmorphism effects' }
 ]
 </script>
 
