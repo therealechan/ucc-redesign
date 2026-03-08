@@ -6,8 +6,8 @@
         <span>UCC VIP</span>
       </router-link>
       <ul class="nav-links">
-        <li><a href="#vehicles"><Car :size="16" /> Vehicles</a></li>
-        <li><a href="#services"><ShieldCheck :size="16" /> Services</a></li>
+        <li><a href="#vehicles">Vehicles</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#blog">News</a></li>
@@ -21,7 +21,6 @@
 </template>
 
 <script setup>
-import { Car, ShieldCheck } from 'lucide-vue-next'
 
 const hideImg = (e) => {
   e.target.style.display = 'none'

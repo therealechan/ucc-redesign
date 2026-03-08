@@ -6,8 +6,8 @@
       <div class="container">
         <router-link to="/" class="nav-logo"><span class="nav-logo-text">UCC VIP</span></router-link>
         <ul class="nav-links">
-          <li><a href="#vehicles"><Car :size="16" /> Vehicles</a></li>
-          <li><a href="#services"><ShieldCheck :size="16" /> Services</a></li>
+          <li><a href="#vehicles">Vehicles</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
           <li><a href="#about">About</a></li>
         </ul>
@@ -177,7 +177,7 @@
 </template>
 
 <script setup>
-import { Car, ShieldCheck, Search, Layers, ClipboardCheck, FileText, Ship, Star, ArrowRight, Route, Trophy, Globe, ScrollText, Microscope, Package, MessageCircle, Award, Building2, Lock, Newspaper, Calendar } from 'lucide-vue-next'
+import { Search, Layers, ClipboardCheck, FileText, Ship, ShieldCheck, Star, ArrowRight, Route, Trophy, Globe, ScrollText, Microscope, Package, MessageCircle, Award, Building2, Lock, Newspaper, Calendar } from 'lucide-vue-next'
 import PageNav from '../components/PageNav.vue'
 import FooterSection from '../components/v1/FooterSection.vue'
 </script>
