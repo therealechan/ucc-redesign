@@ -14,11 +14,13 @@
             <a href="#" class="btn btn-primary btn-lg"><Search :size="18" /> Browse</a>
             <a href="#" class="btn btn-outline btn-lg">Learn More</a>
           </div>
-        </div>
-        <div class="hero-stats-floating">
-          <div class="stat-pill"><span class="num">12K+</span><span class="lbl">Vehicles</span></div>
-          <div class="stat-pill"><span class="num">60+</span><span class="lbl">Countries</span></div>
-          <div class="stat-pill"><span class="num">500+</span><span class="lbl">Dealers</span></div>
+          <div class="hero-stats-row">
+            <div class="hsr-item"><span class="num">12K+</span><span class="lbl">Vehicles</span></div>
+            <div class="hsr-divider"></div>
+            <div class="hsr-item"><span class="num">60+</span><span class="lbl">Countries</span></div>
+            <div class="hsr-divider"></div>
+            <div class="hsr-item"><span class="num">500+</span><span class="lbl">Dealers</span></div>
+          </div>
         </div>
       </div>
 
@@ -104,10 +106,12 @@ import FooterSection from '../components/v1/FooterSection.vue'
 .hero-v4 h1 em { font-style: normal; color: #4ade80; }
 .hero-actions { display: flex; gap: 12px; margin-bottom: 48px; flex-wrap: wrap; }
 
-.hero-stats-floating { position: absolute; right: 10%; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 16px; z-index: 2; }
-.stat-pill { background: #fff; border: 1px solid #E5E7EB; border-radius: 100px; padding: 12px 20px; box-shadow: 0 8px 30px rgba(0,0,0,.08); min-width: 140px; text-align: center; }
-.stat-pill .num { font-size: 24px; font-weight: 800; color: #008600; display: block; }
-.stat-pill .lbl { font-size: 11px; color: #6B7280; text-transform: uppercase; display: block; }
+.hero-stats-row { display: flex; align-items: center; gap: 0; margin-top: 40px; }
+.hsr-item { display: flex; flex-direction: column; gap: 2px; padding: 0 24px 0 0; }
+.hsr-item:first-child { padding-left: 0; }
+.hsr-item .num { font-size: 26px; font-weight: 800; color: #fff; line-height: 1; letter-spacing: -0.02em; }
+.hsr-item .lbl { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 3px; }
+.hsr-divider { width: 1px; height: 36px; background: rgba(255,255,255,0.2); margin-right: 24px; }
 
 .search-floating { position: absolute; bottom: -60px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 1100px; background: #fff; border: 1px solid #E5E7EB; border-radius: 24px; padding: 24px; box-shadow: 0 8px 30px rgba(0,0,0,.08); z-index: 10; }
 .sf-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -169,7 +173,6 @@ import FooterSection from '../components/v1/FooterSection.vue'
 .cta-v4 p { font-size: 17px; opacity: .8; margin-bottom: 32px; }
 
 @media (max-width: 1024px) {
-  .hero-stats-floating { display: none; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .services-bento { grid-template-columns: repeat(2, 1fr); }
   .svc-card-v4.large { grid-column: span 2; grid-row: span 1; }
