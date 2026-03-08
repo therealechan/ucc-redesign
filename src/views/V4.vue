@@ -93,15 +93,15 @@ import FooterSection from '../components/v1/FooterSection.vue'
 </script>
 
 <style scoped>
-.hero-v4 { position: relative; min-height: calc(100vh - 64px); background: linear-gradient(135deg, #ECFDF5 0%, #fff 60%); padding-bottom: 80px; }
-.hero-v4::before { content: ''; position: absolute; top: 0; left: 0; right: 40%; bottom: 0; background: linear-gradient(135deg, #D1FAE5 0%, #ECFDF5 100%); clip-path: polygon(0 0, 100% 0, 60% 100%, 0 100%); z-index: 1; }
-.hero-v4 .hero-car-bg { position: absolute; right: 0; top: 0; width: 50%; height: 100%; z-index: 0; overflow: hidden; }
+.hero-v4 { position: relative; min-height: calc(100vh - 64px); background: #0a0a0a; padding-bottom: 80px; }
+.hero-v4::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.2) 100%); z-index: 1; }
+.hero-v4 .hero-car-bg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; }
 .hero-v4 .hero-car-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .hero-v4 .container { position: relative; z-index: 2; padding-top: 80px; max-width: 1200px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
 .hero-content { max-width: 600px; }
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
-.hero-v4 h1 { font-size: clamp(36px, 5vw, 64px); font-weight: 900; line-height: 1.08; margin-bottom: 20px; letter-spacing: -.03em; color: #111827; }
-.hero-v4 h1 em { font-style: normal; color: #008600; }
+.hero-v4 h1 { font-size: clamp(36px, 5vw, 64px); font-weight: 900; line-height: 1.08; margin-bottom: 20px; letter-spacing: -.03em; color: #fff; }
+.hero-v4 h1 em { font-style: normal; color: #4ade80; }
 .hero-actions { display: flex; gap: 12px; margin-bottom: 48px; flex-wrap: wrap; }
 
 .hero-stats-floating { position: absolute; right: 10%; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 16px; z-index: 2; }
@@ -120,8 +120,8 @@ import FooterSection from '../components/v1/FooterSection.vue'
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: 12px; font: 600 14px/1 'Inter', sans-serif; border: none; cursor: pointer; transition: all .2s; text-decoration: none; }
 .btn-primary { background: #008600; color: #fff; }
 .btn-primary:hover { background: #006B00; transform: translateY(-1px); }
-.btn-outline { background: transparent; border: 1.5px solid #D1D5DB; color: #374151; }
-.btn-outline:hover { border-color: #008600; color: #008600; }
+.btn-outline { background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.4); color: #fff; }
+.btn-outline:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.7); color: #fff; }
 .btn-white { background: #fff; color: #008600; }
 .btn-white:hover { background: #F9FAFB; transform: translateY(-1px); }
 .btn-lg { padding: 16px 32px; font-size: 16px; border-radius: 16px; }
@@ -176,7 +176,6 @@ import FooterSection from '../components/v1/FooterSection.vue'
   .v-grid-v4 { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
-  .hero-v4 .hero-car-bg { display: none; }
   .sf-grid { grid-template-columns: 1fr; }
   .search-floating { position: relative; bottom: auto; left: auto; transform: none; margin: 40px 24px 0; width: auto; }
   .stats-grid { grid-template-columns: 1fr; }

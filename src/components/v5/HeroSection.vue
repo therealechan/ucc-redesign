@@ -117,14 +117,13 @@ onUnmounted(() => {
   align-items: center;
   overflow: hidden;
   padding: 80px 0 120px;
-  background: #f5f5f5;
+  background: #0a0a0a;
 }
 
 .hero-car-bg {
   position: absolute;
-  right: 0;
-  top: 0;
-  width: 45%;
+  inset: 0;
+  width: 100%;
   height: 100%;
   z-index: 0;
   overflow: hidden;
@@ -140,7 +139,7 @@ onUnmounted(() => {
 .hero-car-fade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, #f5f5f5 0%, rgba(245, 245, 245, 0.5) 30%, transparent 70%);
+  background: linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.2) 100%);
 }
 
 .hero .container {
@@ -157,13 +156,13 @@ onUnmounted(() => {
   font-weight: 900;
   line-height: 1.05;
   letter-spacing: -0.035em;
-  color: #1a1a1a;
+  color: #fff;
   margin-bottom: 24px;
 }
 
 .hero h1 em {
   font-style: normal;
-  color: var(--green);
+  color: #4ade80;
 }
 
 /* E-commerce search bar */
@@ -280,10 +279,6 @@ onUnmounted(() => {
 }
 
 @media (max-width: 768px) {
-  .hero-car-bg {
-    display: none;
-  }
-
   .hero-search {
     grid-template-columns: 1fr;
     border-radius: var(--radius-lg);
