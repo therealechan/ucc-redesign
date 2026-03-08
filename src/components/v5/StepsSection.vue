@@ -68,14 +68,6 @@ onUnmounted(() => {
   position: relative;
 }
 
-.steps::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(0, 80, 0, 0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -92,7 +84,7 @@ onUnmounted(() => {
   left: calc(100%/6);
   right: calc(100%/6);
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--green-border) 20%, var(--green-border) 80%, transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 134, 0, 0.3) 20%, rgba(0, 134, 0, 0.3) 80%, transparent);
   z-index: 0;
 }
 
@@ -115,10 +107,10 @@ onUnmounted(() => {
 .step-num {
   width: 52px;
   height: 52px;
-  background: var(--surface-2);
-  border: 2px solid var(--green-border);
+  background: var(--green);
+  border: 2px solid var(--green);
   border-radius: 50%;
-  color: var(--green-bright);
+  color: #fff;
   font-size: 18px;
   font-weight: 800;
   display: flex;
@@ -127,20 +119,19 @@ onUnmounted(() => {
   margin: 0 auto 20px;
   transition: all 0.3s;
   position: relative;
+  box-shadow: 0 4px 12px rgba(0, 134, 0, 0.25);
 }
 
-.step-card:first-child .step-num,
 .step-card:hover .step-num {
-  background: var(--green);
-  color: #fff;
-  border-color: var(--green);
+  background: var(--green-mid);
+  border-color: var(--green-mid);
   box-shadow: 0 0 20px rgba(0, 134, 0, 0.35);
 }
 
 .step-card h4 {
   font-size: 15px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text);
   margin-bottom: 8px;
 }
 

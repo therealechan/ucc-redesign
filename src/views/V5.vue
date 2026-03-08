@@ -50,37 +50,37 @@ import FooterSection from '../components/v5/FooterSection.vue'
 </script>
 
 <style>
-/* Global CSS vars for V5 - Dark Premium theme */
+/* Global CSS vars for V5 - Light E-Commerce theme */
 .v5-page {
   --green: #008600;
-  --green-mid: #009900;
-  --green-bright: #00BB00;
-  --green-glow: rgba(0, 134, 0, 0.18);
-  --green-glow-sm: rgba(0, 134, 0, 0.1);
-  --green-border: rgba(0, 150, 0, 0.25);
+  --green-mid: #007000;
+  --green-bright: #006600;
+  --green-light: #e8f5e9;
+  --green-border: rgba(0, 134, 0, 0.2);
+  --green-glow-sm: rgba(0, 134, 0, 0.08);
 
-  --bg: #07070D;
-  --bg-alt: #0B0B14;
-  --surface: #10101C;
-  --surface-2: #171727;
-  --surface-3: #1E1E30;
+  --bg: #f5f5f5;
+  --bg-alt: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f9f9f9;
+  --surface-3: #f0f0f0;
 
-  --border: rgba(255, 255, 255, 0.07);
-  --border-md: rgba(255, 255, 255, 0.1);
-  --border-lg: rgba(255, 255, 255, 0.14);
+  --border: rgba(0, 0, 0, 0.08);
+  --border-md: rgba(0, 0, 0, 0.12);
+  --border-lg: rgba(0, 0, 0, 0.18);
 
-  --text: #E0E0EE;
-  --text-muted: rgba(224, 224, 238, 0.5);
-  --text-dim: rgba(224, 224, 238, 0.28);
+  --text: #1a1a1a;
+  --text-muted: rgba(26, 26, 26, 0.55);
+  --text-dim: rgba(26, 26, 26, 0.35);
 
   --radius: 12px;
   --radius-lg: 18px;
   --radius-xl: 24px;
   --radius-2xl: 32px;
 
-  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.4);
-  --shadow-float: 0 8px 40px rgba(0, 0, 0, 0.55);
-  --shadow-green: 0 0 40px rgba(0, 134, 0, 0.2);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-float: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-green: 0 4px 20px rgba(0, 134, 0, 0.25);
 
   font-family: 'Inter', system-ui, sans-serif;
   color: var(--text);
@@ -116,20 +116,20 @@ import FooterSection from '../components/v5/FooterSection.vue'
   gap: 7px;
   font-size: 11px;
   font-weight: 700;
-  color: var(--green-bright);
+  color: var(--green);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin-bottom: 14px;
   padding: 5px 14px;
   border: 1px solid var(--green-border);
   border-radius: 100px;
-  background: var(--green-glow-sm);
+  background: var(--green-light);
 }
 
 .v5-page .section-title {
   font-size: clamp(28px, 3.5vw, 42px);
   font-weight: 800;
-  color: #fff;
+  color: var(--text);
   letter-spacing: -0.025em;
   line-height: 1.1;
 }
@@ -169,24 +169,25 @@ import FooterSection from '../components/v5/FooterSection.vue'
 }
 
 .v5-page .btn-ghost {
-  background: rgba(255, 255, 255, 0.06);
+  background: #ffffff;
   color: var(--text);
   border: 1px solid var(--border-md);
 }
 
 .v5-page .btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--surface-2);
   border-color: var(--border-lg);
+  color: var(--green);
 }
 
 .v5-page .btn-outline-green {
   background: transparent;
-  color: var(--green-bright);
+  color: var(--green);
   border: 1px solid var(--green-border);
 }
 
 .v5-page .btn-outline-green:hover {
-  background: var(--green-glow-sm);
+  background: var(--green-light);
 }
 
 .v5-page .btn-white {

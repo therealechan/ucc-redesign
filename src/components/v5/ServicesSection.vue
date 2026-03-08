@@ -99,6 +99,8 @@ onUnmounted(() => {
 
 .service-card:hover {
   background: var(--surface-2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
 }
 
 .service-card:hover::after {
@@ -108,13 +110,13 @@ onUnmounted(() => {
 .service-icon {
   width: 52px;
   height: 52px;
-  background: var(--green-glow-sm);
+  background: var(--green-light);
   border: 1px solid var(--green-border);
   border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--green-bright);
+  color: var(--green);
   margin-bottom: 24px;
   transition: all 0.3s;
 }
@@ -129,7 +131,7 @@ onUnmounted(() => {
 .service-card h3 {
   font-size: 16px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text);
   margin-bottom: 10px;
 }
 

@@ -146,7 +146,7 @@ onUnmounted(() => {
 .vehicle-card:hover {
   border-color: var(--green-border);
   transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--green-border);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 0 0 1px var(--green-border);
 }
 
 .vehicle-img {
@@ -170,7 +170,7 @@ onUnmounted(() => {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 40%, rgba(7, 7, 13, 0.85) 100%);
+  background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.15) 100%);
 }
 
 .vehicle-img .badge {
@@ -178,7 +178,7 @@ onUnmounted(() => {
   top: 14px;
   left: 14px;
   z-index: 2;
-  background: rgba(0, 134, 0, 0.85);
+  background: var(--green);
   color: #fff;
   font-size: 11px;
   font-weight: 700;
@@ -187,8 +187,6 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 5px;
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(0, 187, 0, 0.3);
 }
 
 .vehicle-body {
@@ -198,7 +196,7 @@ onUnmounted(() => {
 .vehicle-body h3 {
   font-size: 16px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text);
   margin-bottom: 6px;
 }
 
@@ -220,14 +218,14 @@ onUnmounted(() => {
 
 .vehicle-specs span {
   font-size: 12px;
-  color: var(--text-muted);
+  color: #555;
   display: flex;
   align-items: center;
   gap: 5px;
-  background: var(--surface-2);
+  background: #f5f5f5;
   padding: 4px 10px;
   border-radius: 100px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .vehicle-footer {
@@ -241,7 +239,7 @@ onUnmounted(() => {
 .vehicle-price {
   font-size: 22px;
   font-weight: 800;
-  color: var(--green-bright);
+  color: var(--green);
 }
 
 .vehicle-price small {

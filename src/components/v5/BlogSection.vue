@@ -117,13 +117,11 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s, filter 0.5s;
-  filter: brightness(0.85);
+  transition: transform 0.5s;
 }
 
 .blog-card:hover .blog-img img {
   transform: scale(1.05);
-  filter: brightness(0.95);
 }
 
 .blog-body {
@@ -134,10 +132,10 @@ onUnmounted(() => {
   display: inline-block;
   font-size: 10px;
   font-weight: 700;
-  color: var(--green-bright);
+  color: var(--green);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  background: var(--green-glow-sm);
+  background: var(--green-light);
   border: 1px solid var(--green-border);
   padding: 3px 10px;
   border-radius: 100px;
@@ -147,7 +145,7 @@ onUnmounted(() => {
 .blog-body h3 {
   font-size: 15px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text);
   line-height: 1.4;
   margin-bottom: 10px;
 }

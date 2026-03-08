@@ -30,9 +30,8 @@ import { Car, ShieldCheck } from 'lucide-vue-next'
   top: 0;
   z-index: 100;
   padding: 0;
-  border-bottom: 1px solid var(--border);
-  background: rgba(7, 7, 13, 0.85);
-  backdrop-filter: blur(20px);
+  border-bottom: 1px solid #e5e5e5;
+  background: #ffffff;
 }
 
 .navbar .container {
@@ -55,7 +54,7 @@ import { Car, ShieldCheck } from 'lucide-vue-next'
 .nav-logo-text {
   font-weight: 800;
   font-size: 19px;
-  color: var(--green-bright);
+  color: var(--green);
   letter-spacing: -0.02em;
 }
 
@@ -68,7 +67,7 @@ import { Car, ShieldCheck } from 'lucide-vue-next'
 .nav-links a {
   font-size: 14px;
   font-weight: 500;
-  color: var(--text-muted);
+  color: #444;
   transition: color 0.2s;
   display: flex;
   align-items: center;
@@ -76,7 +75,7 @@ import { Car, ShieldCheck } from 'lucide-vue-next'
 }
 
 .nav-links a:hover {
-  color: #fff;
+  color: var(--green);
 }
 
 .nav-cta {

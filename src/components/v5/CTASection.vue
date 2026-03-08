@@ -45,7 +45,7 @@ import { Search, Upload } from 'lucide-vue-next'
 }
 
 .cta-seller {
-  background: linear-gradient(135deg, #0a0a18 0%, #131325 60%, #1a1a30 100%);
+  background: #ffffff;
   border: 1px solid var(--border-md);
 }
 
@@ -95,11 +95,11 @@ import { Search, Upload } from 'lucide-vue-next'
 }
 
 .cta-seller h3 {
-  color: #fff;
+  color: #1a1a1a;
 }
 
 .cta-seller p {
-  color: var(--text-muted);
+  color: #555;
 }
 
 .cta-seller-btn {

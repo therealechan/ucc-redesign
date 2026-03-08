@@ -112,7 +112,7 @@ onUnmounted(() => {
 }
 
 .testimonial-stars {
-  color: var(--green-bright);
+  color: var(--green);
   font-size: 16px;
   letter-spacing: 2px;
   margin-bottom: 16px;
@@ -135,7 +135,7 @@ onUnmounted(() => {
 .testimonial-avatar {
   width: 44px;
   height: 44px;
-  background: var(--green-glow-sm);
+  background: var(--green-light);
   border: 1px solid var(--green-border);
   border-radius: 50%;
   display: flex;
@@ -143,14 +143,14 @@ onUnmounted(() => {
   justify-content: center;
   font-size: 13px;
   font-weight: 700;
-  color: var(--green-bright);
+  color: var(--green);
   flex-shrink: 0;
 }
 
 .testimonial-name {
   font-size: 14px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text);
 }
 
 .testimonial-role {
@@ -191,8 +191,8 @@ onUnmounted(() => {
 }
 
 .trust-badge:hover {
-  background: var(--surface-2);
-  color: var(--green-bright);
+  background: var(--green-light);
+  color: var(--green);
 }
 
 .trust-badge svg {

@@ -113,13 +113,13 @@ onUnmounted(() => {
   width: 56px;
   height: 56px;
   flex-shrink: 0;
-  background: var(--green-glow-sm);
+  background: var(--green-light);
   border: 1px solid var(--green-border);
   border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--green-bright);
+  color: var(--green);
   transition: all 0.3s;
 }
 
@@ -133,7 +133,7 @@ onUnmounted(() => {
 .why-body h3 {
   font-size: 17px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text);
   margin-bottom: 8px;
 }
 

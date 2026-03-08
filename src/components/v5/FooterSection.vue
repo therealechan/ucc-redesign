@@ -3,7 +3,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <span style="color:var(--green-bright);font-size:20px;font-weight:800;letter-spacing:-0.02em">UCC VIP</span>
+          <span style="color:#4ade80;font-size:20px;font-weight:800;letter-spacing:-0.02em">UCC VIP</span>
           <p>China's leading cross-border auto trading platform. Connecting dealers and buyers worldwide since 2020.</p>
         </div>
         <div class="footer-col">
@@ -42,8 +42,8 @@
 
 <style scoped>
 .footer {
-  background: #04040A;
-  border-top: 1px solid var(--border);
+  background: #1a1a1a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 72px 0 36px;
 }
 
@@ -56,7 +56,7 @@
 
 .footer-brand p {
   font-size: 14px;
-  color: var(--text-dim);
+  color: rgba(255, 255, 255, 0.4);
   line-height: 1.75;
   margin-top: 16px;
   max-width: 260px;
@@ -74,22 +74,22 @@
 .footer-col a {
   display: block;
   font-size: 14px;
-  color: var(--text-dim);
+  color: rgba(255, 255, 255, 0.45);
   padding: 5px 0;
   transition: color 0.2s;
 }
 
 .footer-col a:hover {
-  color: var(--green-bright);
+  color: #4ade80;
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 28px;
   display: flex;
   justify-content: space-between;
   font-size: 13px;
-  color: var(--text-dim);
+  color: rgba(255, 255, 255, 0.3);
 }
 
 @media (max-width: 1024px) {
