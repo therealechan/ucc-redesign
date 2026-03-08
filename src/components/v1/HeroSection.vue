@@ -2,9 +2,7 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <div class="hero-badge"><span class="dot"></span> Trusted by 500+ dealers worldwide</div>
         <h1>Quality Cars from China, <em>Shipped Worldwide</em></h1>
-        <p class="hero-desc">Source certified pre-owned vehicles directly from China's largest dealers. Export documentation, inspection, and logistics — all handled.</p>
         
         <div class="hero-search">
           <select>
@@ -90,33 +88,6 @@ import { Search } from 'lucide-vue-next'
   max-width: 700px;
 }
 
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(0,134,0,.2);
-  border: 1px solid rgba(0,134,0,.3);
-  padding: 6px 14px;
-  border-radius: 100px;
-  font-size: 13px;
-  font-weight: 500;
-  margin-bottom: 24px;
-  color: rgba(255,255,255,.9);
-}
-
-.hero-badge .dot {
-  width: 6px;
-  height: 6px;
-  background: #00ff00;
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: .4; }
-}
-
 .hero h1 {
   font-size: clamp(36px, 5vw, 56px);
   font-weight: 800;
@@ -128,14 +99,6 @@ import { Search } from 'lucide-vue-next'
 .hero h1 em {
   font-style: normal;
   color: #4ADE80;
-}
-
-.hero-desc {
-  font-size: 18px;
-  color: rgba(255,255,255,.7);
-  max-width: 540px;
-  margin-bottom: 36px;
-  line-height: 1.7;
 }
 
 .hero-search {

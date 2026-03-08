@@ -6,9 +6,7 @@
     <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content">
-        <div class="hero-badge"><span class="dot"></span> Trusted by 500+ dealers worldwide</div>
         <h1>Quality Cars from China, <em>Shipped Worldwide</em></h1>
-        <p class="hero-desc">Source certified pre-owned vehicles directly from China's largest dealers. Export documentation, inspection, and logistics — all handled.</p>
         <div class="hero-actions">
           <a href="#vehicles" class="btn btn-primary btn-lg"><Search :size="18" /> Browse Vehicles</a>
           <a href="#how" class="btn btn-ghost btn-lg"><PlayCircle :size="18" /> How It Works</a>
@@ -72,32 +70,6 @@ import { Search, PlayCircle } from 'lucide-vue-next'
   color: #fff;
 }
 
-.hero-v2 .hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255,255,255,.1);
-  border: 1px solid rgba(255,255,255,.2);
-  padding: 8px 16px;
-  border-radius: 100px;
-  font-size: 13px;
-  font-weight: 500;
-  margin-bottom: 28px;
-}
-
-.hero-v2 .hero-badge .dot {
-  width: 8px;
-  height: 8px;
-  background: #4ADE80;
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: .3; }
-}
-
 .hero-v2 h1 {
   font-size: clamp(36px, 5vw, 54px);
   font-weight: 900;
@@ -109,14 +81,6 @@ import { Search, PlayCircle } from 'lucide-vue-next'
 .hero-v2 h1 em {
   font-style: normal;
   color: #4ADE80;
-}
-
-.hero-v2 .hero-desc {
-  font-size: 17px;
-  color: rgba(255,255,255,.75);
-  line-height: 1.7;
-  margin-bottom: 32px;
-  max-width: 480px;
 }
 
 .hero-v2 .hero-actions {

@@ -21,9 +21,7 @@
     <section class="hero-v3">
       <div class="hero-left">
         <div class="hero-left-inner">
-          <div class="hero-badge"><span class="dot"></span> Export to 60+ Countries</div>
           <h1>China's Best Vehicles, <em>Global Delivery</em></h1>
-          <p class="hero-desc">Connect directly with certified Chinese dealers. We handle inspections, documentation, and worldwide shipping.</p>
           <div class="hero-actions">
             <a href="#" class="btn btn-primary btn-lg">Browse Inventory</a>
             <a href="#" class="btn btn-dark btn-lg">How It Works</a>
@@ -212,12 +210,9 @@ import FooterSection from '../components/v1/FooterSection.vue'
 .hero-right { position: relative; overflow: hidden; }
 .hero-right img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
 .hero-img-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, #111827 0%, transparent 30%); }
-.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(74,222,128,.1); border: 1px solid rgba(74,222,128,.2); padding: 8px 16px; border-radius: 100px; font-size: 13px; font-weight: 500; color: #4ADE80; margin-bottom: 28px; }
-.hero-badge .dot { width: 8px; height: 8px; background: #4ADE80; border-radius: 50%; animation: pulse 2s infinite; }
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
 .hero-left h1 { font-size: clamp(32px, 4vw, 52px); font-weight: 900; line-height: 1.08; margin-bottom: 20px; }
 .hero-left h1 em { font-style: normal; color: #4ADE80; }
-.hero-desc { font-size: 17px; color: rgba(255,255,255,.6); line-height: 1.7; margin-bottom: 32px; }
 .hero-actions { display: flex; gap: 12px; margin-bottom: 48px; flex-wrap: wrap; }
 .hero-stats-v3 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid rgba(255,255,255,.1); padding-top: 32px; }
 .hero-stats-v3 .hs { text-align: left; padding-right: 16px; }

@@ -1,13 +1,12 @@
 <template>
   <section class="hero">
+    <div class="hero-car-bg">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&h=900&fit=crop&q=80" alt="Luxury car">
+      <div class="hero-car-fade"></div>
+    </div>
     <div class="container">
       <div class="hero-inner">
-        <div class="hero-badge">
-          <span class="pulse"></span>
-          Trusted by 500+ dealers worldwide
-        </div>
         <h1>Quality Cars from China,<br><em>Shipped Worldwide</em></h1>
-        <p class="hero-desc">Source certified pre-owned vehicles directly from China's largest dealers. Export documentation, inspection, and logistics — all handled.</p>
         <div class="hero-search">
           <div class="hs-field">
             <label>Brand</label>
@@ -121,46 +120,36 @@ onUnmounted(() => {
   background: #f5f5f5;
 }
 
+.hero-car-bg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 45%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-car-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-car-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #f5f5f5 0%, rgba(245, 245, 245, 0.5) 30%, transparent 70%);
+}
+
 .hero .container {
   position: relative;
+  z-index: 1;
 }
 
 .hero-inner {
   max-width: 700px;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--green-light);
-  border: 1px solid var(--green-border);
-  padding: 7px 16px;
-  border-radius: 100px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--green);
-  margin-bottom: 32px;
-  letter-spacing: 0.02em;
-}
-
-.hero-badge .pulse {
-  width: 7px;
-  height: 7px;
-  background: var(--green);
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-    box-shadow: 0 0 0 0 rgba(0, 134, 0, 0.4);
-  }
-  50% {
-    opacity: 0.7;
-    box-shadow: 0 0 0 5px rgba(0, 134, 0, 0);
-  }
 }
 
 .hero h1 {
@@ -175,14 +164,6 @@ onUnmounted(() => {
 .hero h1 em {
   font-style: normal;
   color: var(--green);
-}
-
-.hero-desc {
-  font-size: 18px;
-  color: #666;
-  line-height: 1.75;
-  margin-bottom: 40px;
-  max-width: 580px;
 }
 
 /* E-commerce search bar */
@@ -299,6 +280,10 @@ onUnmounted(() => {
 }
 
 @media (max-width: 768px) {
+  .hero-car-bg {
+    display: none;
+  }
+
   .hero-search {
     grid-template-columns: 1fr;
     border-radius: var(--radius-lg);

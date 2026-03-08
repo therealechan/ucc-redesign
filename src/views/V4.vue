@@ -4,11 +4,12 @@
     <Navbar />
 
     <section class="hero-v4">
+      <div class="hero-car-bg">
+        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&h=900&fit=crop&q=80" alt="Cars">
+      </div>
       <div class="container">
         <div class="hero-content">
-          <div class="hero-badge"><span class="dot"></span> Trusted by 500+ dealers</div>
           <h1>Quality Cars from China, <em>Shipped Worldwide</em></h1>
-          <p class="hero-desc">Source certified vehicles directly from China's largest dealers.</p>
           <div class="hero-actions">
             <a href="#" class="btn btn-primary btn-lg"><Search :size="18" /> Browse</a>
             <a href="#" class="btn btn-outline btn-lg">Learn More</a>
@@ -93,15 +94,14 @@ import FooterSection from '../components/v1/FooterSection.vue'
 
 <style scoped>
 .hero-v4 { position: relative; min-height: calc(100vh - 64px); background: linear-gradient(135deg, #ECFDF5 0%, #fff 60%); padding-bottom: 80px; }
-.hero-v4::before { content: ''; position: absolute; top: 0; left: 0; right: 40%; bottom: 0; background: linear-gradient(135deg, #D1FAE5 0%, #ECFDF5 100%); clip-path: polygon(0 0, 100% 0, 60% 100%, 0 100%); z-index: 0; }
-.hero-v4 .container { position: relative; z-index: 1; padding-top: 80px; max-width: 1200px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+.hero-v4::before { content: ''; position: absolute; top: 0; left: 0; right: 40%; bottom: 0; background: linear-gradient(135deg, #D1FAE5 0%, #ECFDF5 100%); clip-path: polygon(0 0, 100% 0, 60% 100%, 0 100%); z-index: 1; }
+.hero-v4 .hero-car-bg { position: absolute; right: 0; top: 0; width: 50%; height: 100%; z-index: 0; overflow: hidden; }
+.hero-v4 .hero-car-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.hero-v4 .container { position: relative; z-index: 2; padding-top: 80px; max-width: 1200px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
 .hero-content { max-width: 600px; }
-.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #D1FAE5; padding: 8px 16px; border-radius: 100px; font-size: 13px; font-weight: 500; color: #008600; margin-bottom: 28px; box-shadow: 0 4px 20px rgba(0,0,0,.06); }
-.hero-badge .dot { width: 8px; height: 8px; background: #008600; border-radius: 50%; animation: pulse 2s infinite; }
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
 .hero-v4 h1 { font-size: clamp(36px, 5vw, 64px); font-weight: 900; line-height: 1.08; margin-bottom: 20px; letter-spacing: -.03em; color: #111827; }
 .hero-v4 h1 em { font-style: normal; color: #008600; }
-.hero-desc { font-size: 18px; color: #4B5563; line-height: 1.7; margin-bottom: 32px; }
 .hero-actions { display: flex; gap: 12px; margin-bottom: 48px; flex-wrap: wrap; }
 
 .hero-stats-floating { position: absolute; right: 10%; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 16px; z-index: 2; }
@@ -176,6 +176,7 @@ import FooterSection from '../components/v1/FooterSection.vue'
   .v-grid-v4 { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
+  .hero-v4 .hero-car-bg { display: none; }
   .sf-grid { grid-template-columns: 1fr; }
   .search-floating { position: relative; bottom: auto; left: auto; transform: none; margin: 40px 24px 0; width: auto; }
   .stats-grid { grid-template-columns: 1fr; }
