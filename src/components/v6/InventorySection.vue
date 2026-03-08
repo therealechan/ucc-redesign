@@ -20,11 +20,7 @@
         <div v-for="vehicle in vehicles" :key="vehicle.id" class="vehicle-card">
           <div class="card-image-wrap">
             <img :src="vehicle.img" :alt="`${vehicle.year} ${vehicle.make} ${vehicle.model}`" loading="lazy" />
-            <!-- Condition badge top-left -->
-            <span class="badge-condition" :class="conditionClass(vehicle.condition)">
-              {{ vehicle.condition }}
-            </span>
-            <!-- Label badge top-right -->
+            <!-- Single label badge, top-left -->
             <span v-if="vehicle.badge" class="badge-label" :class="labelClass(vehicle.badge)">
               {{ vehicle.badge }}
             </span>
@@ -52,12 +48,6 @@ const vehicles = [
   { id: 7, year: 2022, make: 'Tesla', model: 'Model 3 LR', price: 38500, mileage: 22900, condition: 'Like New', badge: 'Hot Deal', img: 'https://picsum.photos/seed/model3/400/260' },
   { id: 8, year: 2020, make: 'Jeep', model: 'Grand Cherokee', price: 29900, mileage: 47600, condition: 'Good', badge: null, img: 'https://picsum.photos/seed/jeep/400/260' },
 ]
-
-const conditionClass = (condition) => {
-  if (condition === 'Like New') return 'cond-like-new'
-  if (condition === 'Great') return 'cond-great'
-  return 'cond-good'
-}
 
 const labelClass = (label) => {
   if (label === 'Hot Deal') return 'lbl-hot'
@@ -186,37 +176,11 @@ const labelClass = (label) => {
   transform: scale(1.04);
 }
 
-/* Condition badge - top left */
-.badge-condition {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  padding: 4px 10px;
-  border-radius: 100px;
-  font: 700 11px/1 'Inter', sans-serif;
-  letter-spacing: 0.03em;
-}
-
-.cond-like-new {
-  background: #008600;
-  color: #fff;
-}
-
-.cond-great {
-  background: #2563eb;
-  color: #fff;
-}
-
-.cond-good {
-  background: #6b7280;
-  color: #fff;
-}
-
-/* Label badge - top right */
+/* Single label badge - top left */
 .badge-label {
   position: absolute;
   top: 10px;
-  right: 10px;
+  left: 10px;
   padding: 4px 10px;
   border-radius: 100px;
   font: 700 11px/1 'Inter', sans-serif;

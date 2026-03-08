@@ -1,35 +1,40 @@
 <template>
   <nav class="navbar">
     <div class="container">
-      <a href="#" class="nav-logo">
-        <span class="logo-text">UCC</span>
-        <span class="logo-dot"></span>
-      </a>
+      <router-link to="/" class="nav-logo">
+        <img src="https://ucc-demo.beansmile.ai/ucc-vip-logo.svg" alt="UCC VIP" @error="hideImg" />
+        <span>UCC VIP</span>
+      </router-link>
       <ul class="nav-links">
-        <li><a href="#">Buy</a></li>
-        <li><a href="#">Sell</a></li>
-        <li><a href="#">Finance</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="#vehicles">Vehicles</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#blog">News</a></li>
       </ul>
-      <div class="nav-right">
-        <span class="nav-phone">(800) 555-0198</span>
-        <a href="#" class="btn-prequalify">Get Pre-Qualified</a>
+      <div class="nav-cta">
+        <a href="#" class="btn btn-outline">Sign In</a>
+        <a href="#" class="btn btn-primary">Get Started</a>
       </div>
     </div>
   </nav>
 </template>
 
 <script setup>
+const hideImg = (e) => {
+  e.target.style.display = 'none'
+}
 </script>
 
 <style scoped>
 .navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #E5E7EB;
   position: sticky;
   top: 0;
   z-index: 100;
-  background: #ffffff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  padding: 0 24px;
 }
 
 .navbar .container {
@@ -39,29 +44,23 @@
   height: 64px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 28px;
 }
 
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 10px;
   text-decoration: none;
 }
 
-.logo-text {
-  font-size: 22px;
-  font-weight: 900;
-  color: var(--green);
-  letter-spacing: -0.04em;
+.nav-logo img {
+  height: 32px;
 }
 
-.logo-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--green);
-  margin-top: 2px;
+.nav-logo span {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--green, #008600);
 }
 
 .nav-links {
@@ -75,52 +74,60 @@
 .nav-links a {
   font-size: 14px;
   font-weight: 500;
-  color: #444;
+  color: #6B7280;
   text-decoration: none;
-  transition: color 0.18s;
+  transition: color 0.2s;
 }
 
 .nav-links a:hover {
-  color: var(--green);
+  color: var(--green, #008600);
 }
 
-.nav-right {
+.nav-cta {
   display: flex;
+  gap: 12px;
   align-items: center;
-  gap: 20px;
 }
 
-.nav-phone {
-  font-size: 14px;
-  font-weight: 600;
-  color: #444;
-}
-
-.btn-prequalify {
+.btn {
   display: inline-flex;
   align-items: center;
-  padding: 9px 20px;
-  background: var(--green);
-  color: #fff;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 12px;
   font: 600 14px/1 'Inter', sans-serif;
-  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
   text-decoration: none;
-  transition: background 0.18s, transform 0.18s;
 }
 
-.btn-prequalify:hover {
-  background: var(--green-mid);
+.btn-primary {
+  background: var(--green, #008600);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--green-mid, #006B00);
   transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid #D1D5DB;
+  color: #374151;
+}
+
+.btn-outline:hover {
+  border-color: var(--green, #008600);
+  color: var(--green, #008600);
 }
 
 @media (max-width: 768px) {
-  .nav-links,
-  .nav-phone {
+  .nav-links {
     display: none;
-  }
-
-  .navbar .container {
-    padding: 0 16px;
   }
 }
 </style>

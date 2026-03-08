@@ -22,17 +22,7 @@
           </ul>
         </div>
 
-        <!-- Col 3: Sell -->
-        <div class="footer-col">
-          <div class="col-title">Sell</div>
-          <ul>
-            <li><a href="#">Get Offer</a></li>
-            <li><a href="#">How It Works</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 4: Company -->
+        <!-- Col 3: Company -->
         <div class="footer-col">
           <div class="col-title">Company</div>
           <ul>
@@ -74,7 +64,7 @@
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 40px;
   padding-bottom: 48px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);

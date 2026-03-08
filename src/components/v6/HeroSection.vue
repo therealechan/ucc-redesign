@@ -56,8 +56,10 @@ const chips = ['Under $15K', 'SUVs', 'Low Mileage', 'New Arrivals']
 
 <style scoped>
 .hero {
-  background: #f7f8fa;
-  padding: 80px 0 72px;
+  background: linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.52)),
+    url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1920&q=80')
+    center / cover no-repeat;
+  padding: 96px 0 88px;
 }
 
 .container {
@@ -76,14 +78,15 @@ const chips = ['Under $15K', 'SUVs', 'Low Mileage', 'New Arrivals']
   font-size: clamp(36px, 5vw, 58px);
   font-weight: 900;
   letter-spacing: -0.035em;
-  color: #1a1a1a;
+  color: #ffffff;
   line-height: 1.05;
   margin: 0 0 14px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
   font-size: 18px;
-  color: #6b7280;
+  color: rgba(255, 255, 255, 0.82);
   margin: 0 0 36px;
   line-height: 1.6;
 }
@@ -177,26 +180,26 @@ const chips = ['Under $15K', 'SUVs', 'Low Mileage', 'New Arrivals']
 .chip-label {
   font-size: 13px;
   font-weight: 600;
-  color: #6b7280;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .chip {
   display: inline-flex;
   align-items: center;
   padding: 7px 16px;
-  background: #ffffff;
-  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
   border-radius: 100px;
   font: 500 13px 'Inter', sans-serif;
-  color: #374151;
+  color: #ffffff;
   cursor: pointer;
-  transition: border-color 0.18s, color 0.18s, background 0.18s;
+  transition: border-color 0.18s, background 0.18s;
+  backdrop-filter: blur(4px);
 }
 
 .chip:hover {
-  border-color: var(--green, #008600);
-  color: var(--green, #008600);
-  background: rgba(0, 134, 0, 0.04);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 @media (max-width: 768px) {

@@ -24,6 +24,9 @@
     <!-- Testimonials -->
     <TestimonialsSection />
 
+    <!-- CTA -->
+    <CTASection />
+
     <!-- Footer -->
     <FooterSection />
   </div>
@@ -38,6 +41,7 @@ import InventorySection from '../components/v6/InventorySection.vue'
 import TrustSection from '../components/v6/TrustSection.vue'
 import WhySection from '../components/v6/WhySection.vue'
 import TestimonialsSection from '../components/v6/TestimonialsSection.vue'
+import CTASection from '../components/v6/CTASection.vue'
 import FooterSection from '../components/v6/FooterSection.vue'
 </script>
 
