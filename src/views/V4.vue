@@ -5,7 +5,7 @@
 
     <section class="hero-v4">
       <div class="hero-car-bg">
-        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&h=900&fit=crop&q=80" alt="Cars">
+        <img src="/hero-v6.webp" alt="BYD electric vehicles ready for export at port">
       </div>
       <div class="container">
         <div class="hero-content">
@@ -99,7 +99,7 @@ import FooterSection from '../components/v1/FooterSection.vue'
 
 <style scoped>
 .hero-v4 { position: relative; min-height: calc(100vh - 64px); background: #0a0a0a; padding-bottom: 80px; }
-.hero-v4::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.2) 100%); z-index: 1; }
+/* overlay removed */
 .hero-v4 .hero-car-bg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; }
 .hero-v4 .hero-car-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .hero-v4 .container { position: relative; z-index: 2; padding-top: 80px; max-width: 1200px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
