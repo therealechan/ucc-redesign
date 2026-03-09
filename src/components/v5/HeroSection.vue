@@ -2,6 +2,7 @@
   <section class="hero">
     <div class="hero-car-bg">
       <img src="/hero-bg.webp" alt="BYD electric vehicles ready for export at port">
+      <div class="hero-car-fade"></div>
     </div>
     <div class="container">
       <div class="hero-inner">
@@ -135,7 +136,11 @@ onUnmounted(() => {
   object-position: center;
 }
 
-/* overlay removed */
+.hero-car-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 55%, rgba(0,0,0,.15) 100%);
+}
 
 .hero .container {
   position: relative;

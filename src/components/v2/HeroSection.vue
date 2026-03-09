@@ -3,6 +3,7 @@
     <div class="hero-bg">
       <img src="/hero-bg.webp" alt="BYD electric vehicles ready for export at port">
     </div>
+    <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content">
         <h1>Quality Cars from China, <em>Shipped Worldwide</em></h1>
@@ -46,7 +47,12 @@ import { Search, PlayCircle } from 'lucide-vue-next'
   object-fit: cover;
 }
 
-/* overlay removed */
+.hero-v2 .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 55%, rgba(0,0,0,.15) 100%);
+  z-index: 1;
+}
 
 .hero-v2 .container {
   position: relative;

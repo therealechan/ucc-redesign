@@ -36,6 +36,7 @@
       </div>
       <div class="hero-right">
         <img src="/hero-bg.webp" alt="BYD electric vehicles ready for export at port">
+        <div class="hero-img-overlay"></div>
       </div>
     </section>
 
@@ -208,7 +209,7 @@ import FooterSection from '../components/v1/FooterSection.vue'
 .hero-left-inner { max-width: 540px; margin-left: auto; }
 .hero-right { position: relative; overflow: hidden; }
 .hero-right img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
-/* overlay removed */
+.hero-img-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.2) 60%, rgba(0,0,0,.05) 100%); }
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
 .hero-left h1 { font-size: clamp(32px, 4vw, 52px); font-weight: 900; line-height: 1.08; margin-bottom: 20px; }
 .hero-left h1 em { font-style: normal; color: #4ADE80; }
