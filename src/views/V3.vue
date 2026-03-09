@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="hero-right">
-        <img src="/hero-v6.webp" alt="BYD electric vehicles ready for export at port">
+        <img src="/hero-bg.webp" alt="BYD electric vehicles ready for export at port">
       </div>
     </section>
 

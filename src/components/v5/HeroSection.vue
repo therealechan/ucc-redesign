@@ -1,7 +1,7 @@
 <template>
   <section class="hero">
     <div class="hero-car-bg">
-      <img src="/hero-v6.webp" alt="BYD electric vehicles ready for export at port">
+      <img src="/hero-bg.webp" alt="BYD electric vehicles ready for export at port">
     </div>
     <div class="container">
       <div class="hero-inner">
