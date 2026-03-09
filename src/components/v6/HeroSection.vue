@@ -1,47 +1,21 @@
 <template>
-  <section class="hero">
+  <section class="hero-v2">
+    <div class="hero-bg">
+      <img src="/hero-v6.webp" alt="BYD electric vehicles ready for export at port">
+    </div>
+    <div class="hero-overlay"></div>
     <div class="container">
-      <div class="hero-inner">
-        <h1 class="hero-title">Find Your Next Car</h1>
-        <p class="hero-subtitle">Browse thousands of quality used vehicles near you</p>
-
-        <div class="search-bar">
-          <div class="search-field">
-            <label>Make / Model</label>
-            <input type="text" placeholder="Any Make or Model" />
-          </div>
-          <div class="search-divider"></div>
-          <div class="search-field">
-            <label>Body Type</label>
-            <select>
-              <option>Any</option>
-              <option>SUV</option>
-              <option>Sedan</option>
-              <option>Truck</option>
-              <option>Coupe</option>
-              <option>Minivan</option>
-            </select>
-          </div>
-          <div class="search-divider"></div>
-          <div class="search-field">
-            <label>Max Price</label>
-            <select>
-              <option>Any</option>
-              <option>Under $15K</option>
-              <option>Under $20K</option>
-              <option>Under $25K</option>
-              <option>Under $30K</option>
-            </select>
-          </div>
-          <button class="search-btn">
-            <Search :size="18" />
-            Search
-          </button>
+      <div class="hero-content">
+        <h1>Quality Cars from China, <em>Shipped Worldwide</em></h1>
+        <div class="hero-actions">
+          <a href="#vehicles" class="btn btn-primary btn-lg"><Search :size="18" /> Browse Vehicles</a>
+          <a href="#how" class="btn btn-ghost btn-lg"><PlayCircle :size="18" /> How It Works</a>
         </div>
-
-        <div class="quick-filters">
-          <span class="chip-label">Popular:</span>
-          <button v-for="chip in chips" :key="chip" class="chip">{{ chip }}</button>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="num">12K+</span><span class="lbl">Vehicles</span></div>
+          <div class="hero-stat"><span class="num">60+</span><span class="lbl">Countries</span></div>
+          <div class="hero-stat"><span class="num">200+</span><span class="lbl">Brands</span></div>
+          <div class="hero-stat"><span class="num">500+</span><span class="lbl">Dealers</span></div>
         </div>
       </div>
     </div>
@@ -49,185 +23,162 @@
 </template>
 
 <script setup>
-import { Search } from 'lucide-vue-next'
-
-const chips = ['Under $15K', 'SUVs', 'Low Mileage', 'New Arrivals']
+import { Search, PlayCircle } from 'lucide-vue-next'
 </script>
 
 <style scoped>
-.hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.52)),
-    url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1920&q=80')
-    center / cover no-repeat;
-  padding: 96px 0 88px;
+.hero-v2 {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
-.container {
+.hero-v2 .hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-v2 .hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-v2 .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,20,0,.85) 0%, rgba(0,20,0,.65) 50%, rgba(0,20,0,.3) 100%);
+  z-index: 1;
+}
+
+.hero-v2 .container {
+  position: relative;
+  z-index: 2;
+  padding-top: 40px;
+  padding-bottom: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 28px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
-.hero-inner {
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.hero-title {
-  font-size: clamp(36px, 5vw, 58px);
-  font-weight: 900;
-  letter-spacing: -0.035em;
-  color: #ffffff;
-  line-height: 1.05;
-  margin: 0 0 14px;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-}
-
-.hero-subtitle {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.82);
-  margin: 0 0 36px;
-  line-height: 1.6;
-}
-
-/* Search Bar */
-.search-bar {
-  display: flex;
-  align-items: stretch;
-  background: #ffffff;
-  border: 1.5px solid rgba(0, 0, 0, 0.1);
-  border-radius: var(--radius-xl, 20px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  margin-bottom: 24px;
-}
-
-.search-field {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 14px 20px;
-  text-align: left;
-}
-
-.search-field label {
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #9ca3af;
-  margin-bottom: 5px;
-}
-
-.search-field input,
-.search-field select {
-  background: transparent;
-  border: none;
-  outline: none;
-  font: 600 14px 'Inter', sans-serif;
-  color: #1a1a1a;
-  appearance: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-.search-field input::placeholder {
-  color: #9ca3af;
-  font-weight: 400;
-}
-
-.search-field select option {
-  background: #fff;
-  color: #1a1a1a;
-}
-
-.search-divider {
-  width: 1px;
-  background: rgba(0, 0, 0, 0.08);
-  margin: 12px 0;
-  flex-shrink: 0;
-}
-
-.search-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0 32px;
-  background: var(--green, #008600);
+.hero-v2 .hero-content {
+  max-width: 600px;
   color: #fff;
-  border: none;
-  font: 700 15px/1 'Inter', sans-serif;
-  cursor: pointer;
-  transition: background 0.18s;
-  flex-shrink: 0;
-  border-radius: 0 var(--radius-xl, 20px) var(--radius-xl, 20px) 0;
 }
 
-.search-btn:hover {
-  background: var(--green-mid, #007000);
+.hero-v2 h1 {
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 900;
+  line-height: 1.08;
+  margin-bottom: 20px;
+  letter-spacing: -.03em;
 }
 
-/* Quick filters */
-.quick-filters {
+.hero-v2 h1 em {
+  font-style: normal;
+  color: #4ADE80;
+}
+
+.hero-v2 .hero-actions {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: center;
+  gap: 12px;
+  margin-bottom: 48px;
   flex-wrap: wrap;
 }
 
-.chip-label {
-  font-size: 13px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.7);
+.hero-stats {
+  display: flex;
+  gap: 0;
+  max-width: 520px;
 }
 
-.chip {
+.hero-stat {
+  flex: 1;
+  text-align: center;
+  padding: 0 16px;
+  border-right: 1px solid rgba(255,255,255,.15);
+}
+
+.hero-stat:last-child {
+  border: none;
+}
+
+.hero-stat .num {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  display: block;
+}
+
+.hero-stat .lbl {
+  font-size: 11px;
+  color: rgba(255,255,255,.5);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-top: 2px;
+}
+
+.btn {
   display: inline-flex;
   align-items: center;
-  padding: 7px 16px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
-  border-radius: 100px;
-  font: 500 13px 'Inter', sans-serif;
-  color: #ffffff;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font: 600 14px/1 'Inter', sans-serif;
+  border: none;
   cursor: pointer;
-  transition: border-color 0.18s, background 0.18s;
-  backdrop-filter: blur(4px);
+  transition: all .2s;
+  text-decoration: none;
 }
 
-.chip:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.6);
+.btn-primary {
+  background: #008600;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #006B00;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,.1);
+}
+
+.btn-ghost {
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.25);
+}
+
+.btn-ghost:hover {
+  background: rgba(255,255,255,.25);
+}
+
+.btn-lg {
+  padding: 16px 32px;
+  font-size: 16px;
+  border-radius: 16px;
 }
 
 @media (max-width: 768px) {
-  .hero {
-    padding: 48px 0 48px;
+  .hero-v2 {
+    min-height: 500px;
   }
-
-  .container {
-    padding: 0 16px;
+  .hero-v2 h1 {
+    font-size: 32px;
   }
-
-  .search-bar {
-    flex-direction: column;
-    border-radius: var(--radius-lg, 14px);
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 16px;
   }
-
-  .search-field {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  }
-
-  .search-divider {
-    display: none;
-  }
-
-  .search-btn {
-    padding: 16px;
-    justify-content: center;
-    border-radius: 0 0 var(--radius-lg, 14px) var(--radius-lg, 14px);
+  .hero-stat {
+    flex: none;
+    width: calc(50% - 8px);
+    border: none;
+    padding: 8px 0;
   }
 }
 </style>
