@@ -25,7 +25,7 @@
     </div>
 
     <div class="hero-right">
-      <img src="/hero-v7.webp" alt="Vehicle" class="hero-img" />
+      <img src="/hero-port.webp" alt="Vehicle" class="hero-img" />
       <div class="hero-overlay"></div>
     </div>
   </section>

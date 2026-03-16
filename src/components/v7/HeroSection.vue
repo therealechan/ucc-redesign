@@ -44,7 +44,7 @@
         <div class="dot-grid"></div>
         <div class="image-wrapper">
           <img
-            src="/hero-v7.webp"
+            src="/hero-port.webp"
             alt="Vehicle"
             class="hero-img"
           />
