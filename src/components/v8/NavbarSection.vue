@@ -122,14 +122,20 @@ onUnmounted(() => {
 }
 
 .nav-signin {
+  display: inline-flex;
+  align-items: center;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   color: #374151;
   text-decoration: none;
-  transition: color 0.3s ease;
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: 1.5px solid #D1D5DB;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .nav-signin:hover {
+  border-color: #008600;
   color: #008600;
 }
 
