@@ -43,19 +43,11 @@
       <div class="hero-right">
         <div class="dot-grid"></div>
         <div class="image-wrapper">
-          <div class="stat-chip top-left">
-            <span class="stat-number">12K+</span>
-            <span class="stat-label">Vehicles</span>
-          </div>
           <img
             src="/hero-v7.webp"
             alt="Vehicle"
             class="hero-img"
           />
-          <div class="stat-chip bottom-right green-chip">
-            <span class="stat-number">60+</span>
-            <span class="stat-label">Countries</span>
-          </div>
         </div>
       </div>
     </div>
