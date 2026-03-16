@@ -27,7 +27,8 @@ const pages = [
   { id: 'v3', path: '/v3', label: 'V3 — Bold Split' },
   { id: 'v4', path: '/v4', label: 'V4 — Modern Bento' },
   { id: 'v5', path: '/v5', label: 'V5 — Dark Premium' },
-  { id: 'v6', path: '/v6', label: 'V6 — Marketplace Search' }
+  { id: 'v6', path: '/v6', label: 'V6 — Marketplace Search' },
+  { id: 'v7', path: '/v7', label: 'V7 — Editorial Split' }
 ]
 
 const toggleMenu = () => {
