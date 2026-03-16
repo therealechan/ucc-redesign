@@ -15,17 +15,13 @@
         >
           <div class="service-inner">
             <span class="deco-number">{{ String(i + 1).padStart(2, '0') }}</span>
-            <div class="svc-icon-wrap">
-              <component :is="svc.icon" :size="28" color="#008600" />
-            </div>
             <div class="svc-content">
               <h3>{{ svc.title }}</h3>
               <p>{{ svc.desc }}</p>
             </div>
-            <a href="#" class="svc-link">
-              Learn more
-              <ArrowRight :size="14" />
-            </a>
+            <div class="svc-icon-wrap">
+              <component :is="svc.icon" :size="28" color="#008600" />
+            </div>
           </div>
         </div>
       </div>
@@ -34,7 +30,7 @@
 </template>
 
 <script setup>
-import { Search, ClipboardCheck, FileText, Ship, ArrowRight } from 'lucide-vue-next'
+import { Search, ClipboardCheck, FileText, Ship } from 'lucide-vue-next'
 
 const services = [
   {
@@ -148,7 +144,6 @@ const services = [
   flex-shrink: 0;
   position: relative;
   z-index: 1;
-  margin-left: 100px;
 }
 
 .svc-content {
@@ -172,24 +167,6 @@ const services = [
   max-width: 520px;
 }
 
-.svc-link {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #008600;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  flex-shrink: 0;
-  position: relative;
-  z-index: 1;
-  white-space: nowrap;
-  transition: gap 0.15s;
-}
-
-.svc-link:hover {
-  gap: 10px;
-}
 
 @media (max-width: 768px) {
   .service-inner {
@@ -204,7 +181,7 @@ const services = [
   }
 
   .svc-icon-wrap {
-    margin-left: 60px;
+    margin-left: 0;
   }
 }
 </style>

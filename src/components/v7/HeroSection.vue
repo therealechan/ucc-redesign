@@ -199,40 +199,25 @@ import { ArrowRight, Star, ShieldCheck } from 'lucide-vue-next'
 
 /* Right Panel */
 .hero-right {
-  background: #F5F5F5;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 40px;
   overflow: hidden;
 }
 
 .dot-grid {
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 40%;
-  background-image: radial-gradient(circle, #D1D5DB 1px, transparent 1px);
-  background-size: 20px 20px;
-  opacity: 0.5;
+  display: none;
 }
 
 .image-wrapper {
   position: relative;
   width: 100%;
-  max-width: 520px;
+  height: 100%;
 }
 
 .hero-img {
   width: 100%;
-  height: auto;
-  border-radius: 24px;
-  border-left: 4px solid #008600;
+  height: 100%;
   display: block;
   object-fit: cover;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
 }
 
 .stat-chip {
@@ -243,18 +228,19 @@ import { ArrowRight, Star, ShieldCheck } from 'lucide-vue-next'
   padding: 12px 18px;
   border-radius: 14px;
   min-width: 90px;
+  z-index: 2;
 }
 
 .stat-chip.top-left {
-  top: -14px;
-  left: -14px;
+  top: 24px;
+  left: 24px;
   background: #fff;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .stat-chip.bottom-right {
-  bottom: -14px;
-  right: -14px;
+  bottom: 24px;
+  right: 24px;
 }
 
 .stat-chip.green-chip {
@@ -293,7 +279,6 @@ import { ArrowRight, Star, ShieldCheck } from 'lucide-vue-next'
 
   .hero-right {
     min-height: 280px;
-    padding: 32px 24px;
     order: 0;
   }
 
