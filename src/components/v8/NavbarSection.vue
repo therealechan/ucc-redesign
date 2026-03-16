@@ -9,7 +9,7 @@
           class="logo-img"
           @error="showImg = false"
         />
-        <span class="logo-text" :class="{ 'logo-dark': !isTop }">UCC VIP</span>
+        <span class="logo-text">UCC VIP</span>
       </div>
 
       <div class="nav-links">
@@ -91,12 +91,8 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 800;
   letter-spacing: -0.5px;
-  color: #fff;
-  transition: color 0.3s ease;
-}
-
-.logo-text.logo-dark {
   color: #008600;
+  transition: color 0.3s ease;
 }
 
 .nav-links {
@@ -109,20 +105,12 @@ onUnmounted(() => {
 .nav-link {
   font-size: 14px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  color: #374151;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.scrolled .nav-link {
-  color: #374151;
-}
-
 .nav-link:hover {
-  color: #fff;
-}
-
-.scrolled .nav-link:hover {
   color: #008600;
 }
 
@@ -136,20 +124,12 @@ onUnmounted(() => {
 .nav-signin {
   font-size: 14px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  color: #374151;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.scrolled .nav-signin {
-  color: #374151;
-}
-
 .nav-signin:hover {
-  color: #fff;
-}
-
-.scrolled .nav-signin:hover {
   color: #008600;
 }
 
