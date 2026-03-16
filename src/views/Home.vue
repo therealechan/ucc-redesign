@@ -24,7 +24,9 @@ const versions = [
   { path: '/v3', num: 'V3', name: 'Bold Split', desc: 'Split-screen design with strong contrasts' },
   { path: '/v4', num: 'V4', name: 'Modern Bento', desc: 'Bento grid layout with modern aesthetics' },
   { path: '/v5', num: 'V5', name: 'Dark Premium', desc: 'Dark premium theme with glassmorphism effects' },
-  { path: '/v6', num: 'V6', name: 'Marketplace Search', desc: 'CarMax-inspired search-first inventory layout' }
+  { path: '/v6', num: 'V6', name: 'Marketplace Search', desc: 'CarMax-inspired search-first inventory layout' },
+  { path: '/v7', num: 'V7', name: 'Editorial Split', desc: 'Asymmetric editorial layout with full green section break' },
+  { path: '/v8', num: 'V8', name: 'Diagonal Slash', desc: 'Architectural clip-path hero, dark stats, horizontal scroll vehicles' }
 ]
 </script>
 
