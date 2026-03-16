@@ -9,6 +9,7 @@ import V4 from './views/V4.vue'
 import V5 from './views/V5.vue'
 import V6 from './views/V6.vue'
 import V7 from './views/V7.vue'
+import V8 from './views/V8.vue'
 
 const routes = [
   { path: '/', component: Home },
@@ -18,7 +19,8 @@ const routes = [
   { path: '/v4', component: V4 },
   { path: '/v5', component: V5 },
   { path: '/v6', component: V6 },
-  { path: '/v7', component: V7 }
+  { path: '/v7', component: V7 },
+  { path: '/v8', component: V8 }
 ]
 
 const router = createRouter({
