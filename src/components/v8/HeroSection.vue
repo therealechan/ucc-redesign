@@ -37,7 +37,7 @@ import { PlayCircle } from 'lucide-vue-next'
 
 <style scoped>
 .hero {
-  min-height: 100vh;
+  min-height: 85vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   background: #F8F7F3;
@@ -202,7 +202,7 @@ import { PlayCircle } from 'lucide-vue-next'
   .hero {
     grid-template-columns: 1fr;
     grid-template-rows: 40vh auto;
-    min-height: 100vh;
+    min-height: auto;
   }
 
   .hero-left {
