@@ -48,7 +48,7 @@
             <span class="stat-label">Vehicles</span>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&h=600&fit=crop"
+            src="/hero-v6.webp"
             alt="Vehicle"
             class="hero-img"
           />
