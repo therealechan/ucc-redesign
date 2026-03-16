@@ -41,33 +41,14 @@
 
       <!-- Right Panel -->
       <div class="hero-right">
-        <img :src="images[current]" alt="Vehicle" class="hero-img" />
-        <!-- Image switcher dots -->
-        <div class="img-switcher">
-          <button
-            v-for="(img, i) in images"
-            :key="i"
-            class="dot"
-            :class="{ active: current === i }"
-            @click="current = i"
-          />
-        </div>
-        <!-- Prev/Next arrows -->
-        <button class="arrow arrow-prev" @click="prev"><ChevronLeft :size="20" /></button>
-        <button class="arrow arrow-next" @click="next"><ChevronRight :size="20" /></button>
+        <img src="/hero-port.webp" alt="Vehicle" class="hero-img" />
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { ArrowRight, Star, ShieldCheck, ChevronLeft, ChevronRight } from 'lucide-vue-next'
-
-const images = ['/hero-port.webp', '/hero-2.webp']
-const current = ref(0)
-const prev = () => current.value = (current.value - 1 + images.length) % images.length
-const next = () => current.value = (current.value + 1) % images.length
+import { ArrowRight, Star, ShieldCheck } from 'lucide-vue-next'
 </script>
 
 <style scoped>

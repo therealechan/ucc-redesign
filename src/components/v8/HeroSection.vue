@@ -25,33 +25,14 @@
     </div>
 
     <div class="hero-right">
-      <img :src="images[current]" alt="Vehicle" class="hero-img" />
+      <img src="/hero-port.webp" alt="Vehicle" class="hero-img" />
       <div class="hero-overlay"></div>
-      <!-- Dot switcher -->
-      <div class="img-switcher">
-        <button
-          v-for="(img, i) in images"
-          :key="i"
-          class="dot"
-          :class="{ active: current === i }"
-          @click="current = i"
-        />
-      </div>
-      <!-- Arrows -->
-      <button class="arrow arrow-prev" @click="prev"><ChevronLeft :size="18" /></button>
-      <button class="arrow arrow-next" @click="next"><ChevronRight :size="18" /></button>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { PlayCircle, ChevronLeft, ChevronRight } from 'lucide-vue-next'
-
-const images = ['/hero-port.webp', '/hero-2.webp']
-const current = ref(0)
-const prev = () => current.value = (current.value - 1 + images.length) % images.length
-const next = () => current.value = (current.value + 1) % images.length
+import { PlayCircle } from 'lucide-vue-next'
 </script>
 
 <style scoped>
