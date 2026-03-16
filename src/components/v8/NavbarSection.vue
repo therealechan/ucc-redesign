@@ -91,8 +91,14 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 800;
   letter-spacing: -0.5px;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.scrolled .logo-text {
   color: #008600;
-  transition: color 0.3s ease;
+  text-shadow: none;
 }
 
 .nav-links {
@@ -105,12 +111,22 @@ onUnmounted(() => {
 .nav-link {
   font-size: 14px;
   font-weight: 500;
-  color: #374151;
+  color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 
 .nav-link:hover {
+  color: rgba(255,255,255,0.75);
+}
+
+.scrolled .nav-link {
+  color: #374151;
+  text-shadow: none;
+}
+
+.scrolled .nav-link:hover {
   color: #008600;
 }
 
@@ -126,15 +142,25 @@ onUnmounted(() => {
   align-items: center;
   font-size: 14px;
   font-weight: 600;
-  color: #374151;
+  color: #fff;
   text-decoration: none;
   padding: 7px 18px;
   border-radius: 999px;
-  border: 1.5px solid #D1D5DB;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  transition: border-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-signin:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.scrolled .nav-signin {
+  color: #374151;
+  border-color: #D1D5DB;
+}
+
+.scrolled .nav-signin:hover {
   border-color: #008600;
   color: #008600;
 }
