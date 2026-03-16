@@ -113,24 +113,19 @@ const services = [
   padding: 36px 24px;
   display: flex;
   align-items: center;
-  gap: 32px;
-  position: relative;
-  overflow: hidden;
+  gap: 40px;
 }
 
 .deco-number {
-  position: absolute;
-  left: 24px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 110px;
+  flex-shrink: 0;
+  width: 80px;
+  text-align: center;
+  font-size: 72px;
   font-weight: 900;
   color: transparent;
-  -webkit-text-stroke: 2px #E5E7EB;
+  -webkit-text-stroke: 2px #D1D5DB;
   line-height: 1;
-  pointer-events: none;
   user-select: none;
-  z-index: 0;
 }
 
 .svc-icon-wrap {
@@ -142,14 +137,10 @@ const services = [
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  position: relative;
-  z-index: 1;
 }
 
 .svc-content {
   flex: 1;
-  position: relative;
-  z-index: 1;
 }
 
 .svc-content h3 {
@@ -170,18 +161,12 @@ const services = [
 
 @media (max-width: 768px) {
   .service-inner {
-    flex-wrap: wrap;
-    gap: 16px;
+    gap: 20px;
   }
 
   .deco-number {
-    font-size: 70px;
-    opacity: 0.5;
-    left: 0;
-  }
-
-  .svc-icon-wrap {
-    margin-left: 0;
+    width: 48px;
+    font-size: 48px;
   }
 }
 </style>
