@@ -66,13 +66,13 @@ import { ArrowRight, Star, ShieldCheck } from 'lucide-vue-next'
 .hero-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  min-height: calc(85vh - 68px);
+  height: calc(100vh - 68px - 80px); /* 80px reserve for search card overlap */
 }
 
 .hero-left {
   display: flex;
   align-items: center;
-  padding: 60px 48px 60px 80px;
+  padding: 40px 48px 40px 80px;
 }
 
 .hero-content {
