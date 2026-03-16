@@ -48,7 +48,7 @@
             <span class="stat-label">Vehicles</span>
           </div>
           <img
-            src="/hero-v6.webp"
+            src="/hero-v7.webp"
             alt="Vehicle"
             class="hero-img"
           />
