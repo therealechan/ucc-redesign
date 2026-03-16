@@ -68,23 +68,19 @@ import { ArrowRight, Star, ShieldCheck } from 'lucide-vue-next'
 
 <style scoped>
 .hero {
-  min-height: 100vh;
   background: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  min-height: 100vh;
+  min-height: calc(100vh - 68px);
 }
 
 .hero-left {
   display: flex;
   align-items: center;
-  padding: 80px 48px 80px 80px;
+  padding: 60px 48px 60px 80px;
 }
 
 .hero-content {
@@ -291,17 +287,23 @@ import { ArrowRight, Star, ShieldCheck } from 'lucide-vue-next'
   }
 
   .hero-left {
-    padding: 80px 24px 40px;
+    padding: 48px 24px 40px;
+    order: 1;
   }
 
   .hero-right {
-    min-height: 320px;
-    padding: 40px 24px;
+    min-height: 280px;
+    padding: 32px 24px;
+    order: 0;
   }
 
   .hero-title {
-    font-size: 48px;
+    font-size: 44px;
     letter-spacing: -1px;
+  }
+
+  .hero-content {
+    max-width: 100%;
   }
 }
 </style>

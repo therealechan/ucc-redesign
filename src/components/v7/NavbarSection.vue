@@ -2,7 +2,9 @@
   <header class="navbar" :class="{ scrolled: isScrolled }">
     <div class="navbar-inner">
       <div class="logo">
-        <div class="logo-circle">UCC</div>
+        <div class="logo-circle">
+          <Car :size="18" color="#fff" />
+        </div>
         <div class="logo-text">
           <span class="logo-name">UCC Motors</span>
           <span class="logo-tagline">Vehicle Export</span>
@@ -24,6 +26,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { Car } from 'lucide-vue-next'
 
 const isScrolled = ref(false)
 
