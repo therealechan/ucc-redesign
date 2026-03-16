@@ -1,15 +1,10 @@
 <template>
   <header class="navbar" :class="{ scrolled: isScrolled }">
     <div class="navbar-inner">
-      <div class="logo">
-        <div class="logo-circle">
-          <Car :size="18" color="#fff" />
-        </div>
-        <div class="logo-text">
-          <span class="logo-name">UCC Motors</span>
-          <span class="logo-tagline">Vehicle Export</span>
-        </div>
-      </div>
+      <a href="/" class="logo">
+        <img src="https://ucc-demo.beansmile.ai/ucc-vip-logo.svg" alt="UCC VIP" class="logo-img" @error="hideImg" />
+        <span class="logo-name">UCC VIP</span>
+      </a>
       <nav class="nav-links">
         <a href="#">Browse</a>
         <a href="#">Services</a>
@@ -26,7 +21,8 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import { Car } from 'lucide-vue-next'
+
+const hideImg = (e) => { e.target.style.display = 'none' }
 
 const isScrolled = ref(false)
 
@@ -72,38 +68,15 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   flex-shrink: 0;
 }
 
-.logo-circle {
-  width: 38px;
-  height: 38px;
-  background: #008600;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-}
-
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
+.logo-img {
+  height: 32px;
 }
 
 .logo-name {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
-  color: #111827;
+  color: #008600;
   line-height: 1;
-}
-
-.logo-tagline {
-  font-size: 10px;
-  color: #9CA3AF;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
 }
 
 .nav-links {
