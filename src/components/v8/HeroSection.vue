@@ -25,14 +25,33 @@
     </div>
 
     <div class="hero-right">
-      <img src="/hero-port.webp" alt="Vehicle" class="hero-img" />
+      <img :src="images[current]" alt="Vehicle" class="hero-img" />
       <div class="hero-overlay"></div>
+      <!-- Dot switcher -->
+      <div class="img-switcher">
+        <button
+          v-for="(img, i) in images"
+          :key="i"
+          class="dot"
+          :class="{ active: current === i }"
+          @click="current = i"
+        />
+      </div>
+      <!-- Arrows -->
+      <button class="arrow arrow-prev" @click="prev"><ChevronLeft :size="18" /></button>
+      <button class="arrow arrow-next" @click="next"><ChevronRight :size="18" /></button>
     </div>
   </section>
 </template>
 
 <script setup>
-import { PlayCircle } from 'lucide-vue-next'
+import { ref } from 'vue'
+import { PlayCircle, ChevronLeft, ChevronRight } from 'lucide-vue-next'
+
+const images = ['/hero-port.webp', '/hero-2.webp']
+const current = ref(0)
+const prev = () => current.value = (current.value - 1 + images.length) % images.length
+const next = () => current.value = (current.value + 1) % images.length
 </script>
 
 <style scoped>
@@ -197,6 +216,52 @@ import { PlayCircle } from 'lucide-vue-next'
   background: linear-gradient(135deg, rgba(17, 17, 17, 0.6) 0%, rgba(17, 17, 17, 0.1) 60%);
   z-index: 1;
 }
+
+.img-switcher {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+.dot.active {
+  background: #fff;
+  transform: scale(1.3);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  z-index: 10;
+  transition: background 0.2s;
+}
+.arrow:hover { background: rgba(255,255,255,0.3); }
+.arrow-prev { left: 20px; }
+.arrow-next { right: 20px; }
 
 @media (max-width: 768px) {
   .hero {

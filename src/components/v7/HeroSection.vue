@@ -41,21 +41,33 @@
 
       <!-- Right Panel -->
       <div class="hero-right">
-        <div class="dot-grid"></div>
-        <div class="image-wrapper">
-          <img
-            src="/hero-port.webp"
-            alt="Vehicle"
-            class="hero-img"
+        <img :src="images[current]" alt="Vehicle" class="hero-img" />
+        <!-- Image switcher dots -->
+        <div class="img-switcher">
+          <button
+            v-for="(img, i) in images"
+            :key="i"
+            class="dot"
+            :class="{ active: current === i }"
+            @click="current = i"
           />
         </div>
+        <!-- Prev/Next arrows -->
+        <button class="arrow arrow-prev" @click="prev"><ChevronLeft :size="20" /></button>
+        <button class="arrow arrow-next" @click="next"><ChevronRight :size="20" /></button>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ArrowRight, Star, ShieldCheck } from 'lucide-vue-next'
+import { ref } from 'vue'
+import { ArrowRight, Star, ShieldCheck, ChevronLeft, ChevronRight } from 'lucide-vue-next'
+
+const images = ['/hero-port.webp', '/hero-2.webp']
+const current = ref(0)
+const prev = () => current.value = (current.value - 1 + images.length) % images.length
+const next = () => current.value = (current.value + 1) % images.length
 </script>
 
 <style scoped>
@@ -66,7 +78,7 @@ import { ArrowRight, Star, ShieldCheck } from 'lucide-vue-next'
 .hero-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  height: calc(100vh - 68px - 80px); /* 80px reserve for search card overlap */
+  height: calc(100vh - 68px - 80px);
 }
 
 .hero-left {
@@ -110,9 +122,7 @@ import { ArrowRight, Star, ShieldCheck } from 'lucide-vue-next'
   margin: 0 0 24px 0;
 }
 
-.hero-title .green {
-  color: #008600;
-}
+.hero-title .green { color: #008600; }
 
 .hero-sub {
   font-size: 17px;
@@ -140,11 +150,7 @@ import { ArrowRight, Star, ShieldCheck } from 'lucide-vue-next'
   transition: background 0.2s, transform 0.2s;
   box-shadow: 0 4px 14px rgba(0, 134, 0, 0.3);
 }
-
-.btn-primary:hover {
-  background: #006a00;
-  transform: translateY(-2px);
-}
+.btn-primary:hover { background: #006a00; transform: translateY(-2px); }
 
 .btn-ghost {
   display: flex;
@@ -156,10 +162,7 @@ import { ArrowRight, Star, ShieldCheck } from 'lucide-vue-next'
   text-decoration: none;
   transition: color 0.2s;
 }
-
-.btn-ghost:hover {
-  color: #008600;
-}
+.btn-ghost:hover { color: #008600; }
 
 .trust-strip {
   display: flex;
@@ -178,10 +181,7 @@ import { ArrowRight, Star, ShieldCheck } from 'lucide-vue-next'
   font-weight: 500;
 }
 
-.stars {
-  display: flex;
-  gap: 2px;
-}
+.stars { display: flex; gap: 2px; }
 
 .trust-divider {
   width: 1px;
@@ -195,92 +195,80 @@ import { ArrowRight, Star, ShieldCheck } from 'lucide-vue-next'
   overflow: hidden;
 }
 
-.dot-grid {
-  display: none;
-}
-
-.image-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
 .hero-img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
+  transition: opacity 0.4s ease;
 }
 
-.stat-chip {
+/* Dot switcher */
+.img-switcher {
   position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 12px 18px;
-  border-radius: 14px;
-  min-width: 90px;
-  z-index: 2;
+  gap: 8px;
+  z-index: 10;
 }
 
-.stat-chip.top-left {
-  top: 24px;
-  left: 24px;
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+.dot.active {
   background: #fff;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: scale(1.3);
 }
 
-.stat-chip.bottom-right {
-  bottom: 24px;
-  right: 24px;
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  z-index: 10;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
-
-.stat-chip.green-chip {
-  background: #008600;
-}
-
-.stat-number {
-  font-size: 18px;
-  font-weight: 800;
-  color: #111827;
-  line-height: 1;
-}
-
-.green-chip .stat-number,
-.green-chip .stat-label {
-  color: #fff;
-}
-
-.stat-label {
-  font-size: 11px;
-  font-weight: 500;
-  color: #6B7280;
-  margin-top: 2px;
-}
+.arrow:hover { background: #fff; }
+.arrow-prev { left: 12px; }
+.arrow-next { right: 12px; }
 
 @media (max-width: 768px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    min-height: auto;
+    height: auto;
   }
-
   .hero-left {
     padding: 48px 24px 40px;
     order: 1;
   }
-
   .hero-right {
     min-height: 280px;
     order: 0;
   }
-
   .hero-title {
     font-size: 44px;
     letter-spacing: -1px;
   }
-
-  .hero-content {
-    max-width: 100%;
-  }
+  .hero-content { max-width: 100%; }
 }
 </style>
