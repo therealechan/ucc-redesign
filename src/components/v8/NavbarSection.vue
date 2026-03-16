@@ -91,14 +91,8 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 800;
   letter-spacing: -0.5px;
-  color: #fff;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.scrolled .logo-text {
   color: #008600;
-  text-shadow: none;
+  transition: color 0.3s ease;
 }
 
 .nav-links {
@@ -111,19 +105,17 @@ onUnmounted(() => {
 .nav-link {
   font-size: 14px;
   font-weight: 500;
-  color: #fff;
+  color: #111827;
   text-decoration: none;
   transition: color 0.3s ease;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 
 .nav-link:hover {
-  color: rgba(255,255,255,0.75);
+  color: #008600;
 }
 
 .scrolled .nav-link {
   color: #374151;
-  text-shadow: none;
 }
 
 .scrolled .nav-link:hover {
