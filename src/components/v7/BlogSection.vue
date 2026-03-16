@@ -17,7 +17,7 @@
         <div class="featured-article">
           <div class="featured-img-wrap">
             <img
-              src="https://images.unsplash.com/photo-1549317661-bd32c8ce0729?w=800&h=500&fit=crop"
+              src="https://images.unsplash.com/photo-1485291571150-772bcfc10da5?w=800&h=500&fit=crop"
               alt="Featured Article"
             />
             <span class="category-tag">EXPORT GUIDE</span>
