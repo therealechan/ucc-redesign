@@ -77,7 +77,7 @@ import { Car, LayoutGrid, DollarSign, MapPin, Search, ChevronDown } from 'lucide
 
 .search-wrapper {
   max-width: 900px;
-  margin: 0 auto;
+  margin: -28px auto 0;
   padding: 0 24px;
   position: relative;
   z-index: 10;

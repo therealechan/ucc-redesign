@@ -59,7 +59,7 @@ import { ArrowRight, Star, ShieldCheck } from 'lucide-vue-next'
 .hero-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  height: 518px;
+  height: calc(100vh - 68px - 80px);
 }
 
 .hero-left {

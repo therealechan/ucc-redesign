@@ -70,7 +70,7 @@ const activeTab = ref('All')
   position: relative;
   z-index: 10;
   padding: 0 24px;
-  margin-top: 0;
+  margin-top: -40px;
 }
 
 .container {
